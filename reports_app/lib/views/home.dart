@@ -20,14 +20,17 @@ class _HomeViewState extends State<HomeView> {
   void initState() {
     super.initState();
     _horizontalPageController = PageController(
-        initialPage: _currentHorizontalPage, viewportFraction: _horizontalViewPortionFraction);
+        initialPage: _currentHorizontalPage,
+        viewportFraction: _horizontalViewPortionFraction);
     _verticalPageController = PageController(
-        initialPage: _currentVerticalPage, viewportFraction: _verticalViewPortFraction);
+        initialPage: _currentVerticalPage,
+        viewportFraction: _verticalViewPortFraction);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).backgroundColor,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         bottomOpacity: 0.0,
@@ -42,6 +45,10 @@ class _HomeViewState extends State<HomeView> {
     return PageView(
       controller: _horizontalPageController,
       scrollDirection: Axis.horizontal,
+      physics: BouncingScrollPhysics(),
+      onPageChanged: (page) {
+        _currentHorizontalPage = page;
+      },
       reverse: true,
       children: <Widget>[
         PageView(

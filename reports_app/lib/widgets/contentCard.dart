@@ -14,7 +14,13 @@ class ContentCard extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [Text('Hola'), Text('Gatito')],
+          children: [
+            Text('Hola'),
+            Text('Gatito'),
+            FloatingActionButton(onPressed: () {
+              
+            })
+          ],
         ),
       ),
     );
