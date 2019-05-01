@@ -16,6 +16,8 @@ class _HomeViewState extends State<HomeView> {
   int _currentHorizontalPage = 0;
   int _currentVerticalPage = 0;
 
+  double page = 2.0;
+
   @override
   void initState() {
     super.initState();
@@ -32,9 +34,7 @@ class _HomeViewState extends State<HomeView> {
     return Scaffold(
       backgroundColor: Theme.of(context).backgroundColor,
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        bottomOpacity: 0.0,
-        toolbarOpacity: 0.0,
+        title: Text('Home'),
         elevation: 0.0,
       ),
       body: _buildPageView(context),
@@ -42,38 +42,45 @@ class _HomeViewState extends State<HomeView> {
   }
 
   Widget _buildPageView(BuildContext context) {
-    return PageView(
-      controller: _horizontalPageController,
-      scrollDirection: Axis.horizontal,
-      physics: BouncingScrollPhysics(),
-      onPageChanged: (page) {
-        _currentHorizontalPage = page;
+    return NotificationListener<ScrollNotification>(
+      onNotification: (ScrollNotification notification) {
+        if (notification is ScrollUpdateNotification) {
+          page = _horizontalPageController.page;
+        }
       },
-      reverse: true,
-      children: <Widget>[
-        PageView(
-          scrollDirection: Axis.vertical,
-          controller: _verticalPageController,
-          children: <Widget>[
-            ContentCard(),
-            ContentCard(),
-          ],
-        ),
-        PageView(
-          scrollDirection: Axis.vertical,
-          controller: _verticalPageController,
-          children: <Widget>[
-            ContentCard(),
-          ],
-        ),
-        PageView(
-          scrollDirection: Axis.vertical,
-          controller: _verticalPageController,
-          children: <Widget>[
-            ContentCard(),
-          ],
-        ),
-      ],
+      child: PageView(
+        controller: _horizontalPageController,
+        scrollDirection: Axis.horizontal,
+        physics: BouncingScrollPhysics(),
+        onPageChanged: (page) {
+          _currentHorizontalPage = page;
+        },
+        reverse: true,
+        children: <Widget>[
+          PageView(
+            scrollDirection: Axis.vertical,
+            controller: _verticalPageController,
+            children: <Widget>[
+              ContentCard(),
+              ContentCard(),
+            ],
+          ),
+          PageView(
+            scrollDirection: Axis.vertical,
+            controller: _verticalPageController,
+            children: <Widget>[
+              ContentCard(),
+            ],
+          ),
+          PageView(
+            scrollDirection: Axis.vertical,
+            controller: _verticalPageController,
+            children: <Widget>[
+              ContentCard(),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }
