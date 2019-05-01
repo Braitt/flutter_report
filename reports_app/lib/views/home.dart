@@ -1,21 +1,72 @@
 import 'package:flutter/material.dart';
+import '../widgets/contentCard.dart';
 
-class HomeView extends StatelessWidget {
+class HomeView extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() => _HomeViewState();
+}
+
+class _HomeViewState extends State<HomeView> {
+  double _horizontalViewPortionFraction = 0.8;
+  double _verticalViewPortFraction = 0.8;
+
+  PageController _horizontalPageController;
+  PageController _verticalPageController;
+
+  int _currentHorizontalPage = 0;
+  int _currentVerticalPage = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    _horizontalPageController = PageController(
+        initialPage: _currentHorizontalPage, viewportFraction: _horizontalViewPortionFraction);
+    _verticalPageController = PageController(
+        initialPage: _currentVerticalPage, viewportFraction: _verticalViewPortFraction);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(''),
+        backgroundColor: Colors.transparent,
         bottomOpacity: 0.0,
         toolbarOpacity: 0.0,
-        backgroundColor: Colors.transparent,
         elevation: 0.0,
       ),
-      body: _buildCards(),
+      body: _buildPageView(context),
     );
   }
 
-  Widget _buildCards() {
-    return Text('gatitow');
+  Widget _buildPageView(BuildContext context) {
+    return PageView(
+      controller: _horizontalPageController,
+      scrollDirection: Axis.horizontal,
+      reverse: true,
+      children: <Widget>[
+        PageView(
+          scrollDirection: Axis.vertical,
+          controller: _verticalPageController,
+          children: <Widget>[
+            ContentCard(),
+            ContentCard(),
+          ],
+        ),
+        PageView(
+          scrollDirection: Axis.vertical,
+          controller: _verticalPageController,
+          children: <Widget>[
+            ContentCard(),
+          ],
+        ),
+        PageView(
+          scrollDirection: Axis.vertical,
+          controller: _verticalPageController,
+          children: <Widget>[
+            ContentCard(),
+          ],
+        ),
+      ],
+    );
   }
 }
