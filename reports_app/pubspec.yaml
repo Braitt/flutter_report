@@ -17,6 +17,8 @@ environment:
   sdk: ">=2.1.0 <3.0.0"
 
 dependencies:
+  vertical_tabs: ^0.1.4
+
   flutter:
     sdk: flutter
 

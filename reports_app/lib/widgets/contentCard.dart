@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../views/topics.dart';
+import '../views/reports.dart';
 
 class ContentCard extends StatelessWidget {
   @override
@@ -17,8 +19,16 @@ class ContentCard extends StatelessWidget {
           children: [
             Text('Hola'),
             Text('Gatito'),
-            FloatingActionButton(onPressed: () {
-              
+            RaisedButton(
+              child: Text('Details for topic'),
+              onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (BuildContext context) {
+                    return TopicsView();
+                  },
+                ),
+              ).then((_) {});
             })
           ],
         ),
