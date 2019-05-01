@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../widgets/contentCard.dart';
+import '../widgets/text_content_card.dart';
+import '../widgets/vertical_page_view.dart';
 
 class HomeView extends StatefulWidget {
   @override
@@ -10,11 +11,23 @@ class _HomeViewState extends State<HomeView> {
   double _horizontalViewPortionFraction = 0.8;
   double _verticalViewPortFraction = 0.8;
 
+  final List<List<Map<String, String>>> jason = [
+    [
+      {'text': 'Gatuno 1 botate'},
+      {'text': 'Gatuno 2 botate'}
+    ],
+    [
+      {'text': 'Gatuno 3 botate'},
+      {'text': 'Gatuno 4 botate'}
+    ],
+    [
+      {'text': 'Gatuno 5 botate'}
+    ]
+  ];
+
   PageController _horizontalPageController;
-  PageController _verticalPageController;
 
   int _currentHorizontalPage = 0;
-  int _currentVerticalPage = 0;
 
   double page = 2.0;
 
@@ -24,9 +37,6 @@ class _HomeViewState extends State<HomeView> {
     _horizontalPageController = PageController(
         initialPage: _currentHorizontalPage,
         viewportFraction: _horizontalViewPortionFraction);
-    _verticalPageController = PageController(
-        initialPage: _currentVerticalPage,
-        viewportFraction: _verticalViewPortFraction);
   }
 
   @override
@@ -56,30 +66,9 @@ class _HomeViewState extends State<HomeView> {
           _currentHorizontalPage = page;
         },
         reverse: true,
-        children: <Widget>[
-          PageView(
-            scrollDirection: Axis.vertical,
-            controller: _verticalPageController,
-            children: <Widget>[
-              ContentCard(),
-              ContentCard(),
-            ],
-          ),
-          PageView(
-            scrollDirection: Axis.vertical,
-            controller: _verticalPageController,
-            children: <Widget>[
-              ContentCard(),
-            ],
-          ),
-          PageView(
-            scrollDirection: Axis.vertical,
-            controller: _verticalPageController,
-            children: <Widget>[
-              ContentCard(),
-            ],
-          ),
-        ],
+        children: jason.map((verticalContent) {
+          return VerticalPageView(texts: verticalContent);
+        }).toList(),
       ),
     );
   }

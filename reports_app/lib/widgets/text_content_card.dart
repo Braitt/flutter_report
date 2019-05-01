@@ -2,7 +2,11 @@ import 'package:flutter/material.dart';
 import '../views/topics.dart';
 import '../views/reports.dart';
 
-class ContentCard extends StatelessWidget {
+class TextContentCard extends StatelessWidget {
+  final String text;
+
+  TextContentCard({@required this.text});
+
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -17,8 +21,7 @@ class ContentCard extends StatelessWidget {
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('Hola'),
-            Text('Gatito'),
+            Text(text),
             RaisedButton(
               child: Text('Details for topic'),
               onPressed: () {
