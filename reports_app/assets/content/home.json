@@ -2,14 +2,13 @@
   [
     {
       "text": "GATITO TARJETA 1"
-    },
-    {
-      "image": "/assets/guao.jpg"
+    },{
+      "text": "GATITO TARJETA 1"
     }
   ],
   [
     {
       "text": "GATITO TARJETA 2"
     }
-  ]
 ]
+  ]

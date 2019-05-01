@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import './text_content_card.dart';
 
 class VerticalPageView extends StatefulWidget {
@@ -35,9 +36,9 @@ class _VerticalPageViewState extends State<VerticalPageView> {
         onPageChanged: (pageIndex) {
           _currentVerticalPage = pageIndex;
         },
-        children: widget.texts.map((cardContent) {
+        children: widget.texts.map((Map<String, dynamic> cardContent) {
           if (cardContent.containsKey('text')) {
-            return TextContentCard(text: cardContent['text']);
+            return TextContentCard.fromJson(cardContent);
           }
         }).toList());
   }

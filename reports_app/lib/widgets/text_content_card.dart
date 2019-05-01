@@ -1,11 +1,26 @@
 import 'package:flutter/material.dart';
+
 import '../views/topics.dart';
-import '../views/reports.dart';
 
 class TextContentCard extends StatelessWidget {
   final String text;
+  final String image;
 
-  TextContentCard({@required this.text});
+  TextContentCard({this.text, this.image});
+
+  factory TextContentCard.fromJson(Map<String, dynamic> parsedJson) {
+    if (parsedJson.containsKey('text') && parsedJson.containsKey('image')) {
+      return TextContentCard(
+          text: parsedJson['text'], image: parsedJson['image']);
+    } else if (parsedJson.containsKey('text')) {
+      return TextContentCard(text: parsedJson['text']);
+    } else if (parsedJson.containsKey('image')) {
+      return TextContentCard(text: parsedJson['image']);
+    } else {
+      // This should throw an exception in runtime
+      return null;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -23,16 +38,16 @@ class TextContentCard extends StatelessWidget {
           children: [
             Text(text),
             RaisedButton(
-              child: Text('Details for topic'),
-              onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (BuildContext context) {
-                    return TopicsView();
-                  },
-                ),
-              ).then((_) {});
-            })
+                child: Text('Details for topic'),
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (BuildContext context) {
+                        return TopicsView();
+                      },
+                    ),
+                  ).then((_) {});
+                })
           ],
         ),
       ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../widgets/text_content_card.dart';
+
+import '../utils/json_parser.dart';
 import '../widgets/vertical_page_view.dart';
 
 class HomeView extends StatefulWidget {
@@ -9,21 +10,8 @@ class HomeView extends StatefulWidget {
 
 class _HomeViewState extends State<HomeView> {
   double _horizontalViewPortionFraction = 0.8;
-  double _verticalViewPortFraction = 0.8;
 
-  final List<List<Map<String, String>>> jason = [
-    [
-      {'text': 'Gatuno 1 botate'},
-      {'text': 'Gatuno 2 botate'}
-    ],
-    [
-      {'text': 'Gatuno 3 botate'},
-      {'text': 'Gatuno 4 botate'}
-    ],
-    [
-      {'text': 'Gatuno 5 botate'}
-    ]
-  ];
+  List<List<Map<String, String>>> _parsedJson;
 
   PageController _horizontalPageController;
 
@@ -37,6 +25,13 @@ class _HomeViewState extends State<HomeView> {
     _horizontalPageController = PageController(
         initialPage: _currentHorizontalPage,
         viewportFraction: _horizontalViewPortionFraction);
+    DefaultAssetBundle.of(context)
+        .loadString('assets/content/home.json')
+        .then((data) {
+      setState(() {
+        _parsedJson = parseJson(data);
+      });
+    });
   }
 
   @override
@@ -66,9 +61,11 @@ class _HomeViewState extends State<HomeView> {
           _currentHorizontalPage = page;
         },
         reverse: true,
-        children: jason.map((verticalContent) {
-          return VerticalPageView(texts: verticalContent);
-        }).toList(),
+        children: _parsedJson == null
+            ? [Text('')]
+            : _parsedJson.map((verticalContent) {
+                return VerticalPageView(texts: verticalContent);
+              }).toList(),
       ),
     );
   }
