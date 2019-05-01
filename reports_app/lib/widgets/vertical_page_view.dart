@@ -37,9 +37,7 @@ class _VerticalPageViewState extends State<VerticalPageView> {
           _currentVerticalPage = pageIndex;
         },
         children: widget.texts.map((Map<String, dynamic> cardContent) {
-          if (cardContent.containsKey('text')) {
-            return TextContentCard.fromJson(cardContent);
-          }
+          return TextContentCard.fromJson(cardContent);
         }).toList());
   }
 }

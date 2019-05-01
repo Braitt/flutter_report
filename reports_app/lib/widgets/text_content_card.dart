@@ -15,7 +15,8 @@ class TextContentCard extends StatelessWidget {
     } else if (parsedJson.containsKey('text')) {
       return TextContentCard(text: parsedJson['text']);
     } else if (parsedJson.containsKey('image')) {
-      return TextContentCard(text: parsedJson['image']);
+      print(parsedJson['image']);
+      return TextContentCard(image: parsedJson['image']);
     } else {
       // This should throw an exception in runtime
       return null;
@@ -36,7 +37,8 @@ class TextContentCard extends StatelessWidget {
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(text),
+            text == null ? Text('') : Text(text),
+            image == null ? Text('') : Image.asset(image),
             RaisedButton(
                 child: Text('Details for topic'),
                 onPressed: () {

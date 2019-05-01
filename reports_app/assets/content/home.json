@@ -1,14 +1,10 @@
 [
   [
     {
-      "text": "GATITO TARJETA 1"
+	  "image": "assets/images/guao.png",
+	  "text": "oh my"
     },{
-      "text": "GATITO TARJETA 1"
-    }
-  ],
-  [
-    {
-      "text": "GATITO TARJETA 2"
-    }
-]
+		"image": "assets/images/guao.png"
+	}
+  ]
   ]
