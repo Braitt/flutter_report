@@ -1,10 +1,49 @@
 [
   [
     {
-	  "image": "assets/images/guao.png",
-	  "text": "oh my"
+	  "text": "We are Rogelio García and Nicolás Hernández.\nWelcome to our report!"
     },{
 		"image": "assets/images/guao.png"
+	},{
+		"image": "assets/images/guao.png"
+	}
+  ],
+  [
+  {
+	"text": "Apps chosen\nAs flutter is a pretty new thing, finding an app that has over a million downloads on the Play Store is not easy, in fact, only only found Alibaba with 50 million downloads. The second biggest app would be Reflectly with 100.000. Moreover, finding an app that is open-source is even harder. We chose three open-source apps and will be doing different analysis on them: 2T2000s, SpaceX GO! And Platypus Crypto."
+  }
+  ],
+  [
+	{
+		"text": "2T200s\nThis app was created for Trinity College at University of Toronto as an app to guide students through the orientation week. It serves as a schedule where students could see when and where activities are due. People can also upload pictures and view others’ pictures. This app showcases breathtaking animations in every Widget and background."
+	},
+	{
+		"text": "Technical info"
+	},
+	{
+	"image": "assets/images/guao.png"
+	}
+  ],
+  [
+	{
+		"text": "SpaceX GO!\nThis app works as a tracking for SpaceX past and upcoming launch dates and news, as well as information about the vessels and the company."
+	},
+	{
+		"text": "Technical info"
+	},
+	{
+	"image": "assets/images/guao.png"
+	}
+  ],
+  [
+	{
+		"text": "Platypus Crypto\nThis app is a cryptocurrency tracker. It offers real-time 7-day graphs of prices of the assets, and it supports over 30 currencies."
+	},
+	{
+		"text": "Technical info"
+	},
+	{
+	"image": "assets/images/guao.png"
 	}
   ]
   ]

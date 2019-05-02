@@ -42,7 +42,13 @@ class _HomeViewState extends State<HomeView> {
         title: Text('Home'),
         elevation: 0.0,
       ),
-      body: _buildPageView(context),
+      body: Container(
+          decoration: BoxDecoration(
+              gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [Colors.teal, Theme.of(context).cardColor])),
+          child: _buildPageView(context)),
     );
   }
 

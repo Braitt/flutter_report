@@ -15,7 +15,6 @@ class TextContentCard extends StatelessWidget {
     } else if (parsedJson.containsKey('text')) {
       return TextContentCard(text: parsedJson['text']);
     } else if (parsedJson.containsKey('image')) {
-      print(parsedJson['image']);
       return TextContentCard(image: parsedJson['image']);
     } else {
       // This should throw an exception in runtime
@@ -26,7 +25,7 @@ class TextContentCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: 4.0,
+      elevation: 2.0,
       clipBehavior: Clip.antiAlias,
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(20.0))),
