@@ -55,6 +55,9 @@ flutter:
     - assets/images/performance/noLoadedFilters(1).gif
     - assets/images/performance/loadedFilters.gif
     - assets/images/performance/loadedFilters(1).gif
+    - assets/images/home/SpaceX_1.jpg
+    - assets/images/home/SpaceX_2.jpg
+    - assets/images/home/SpaceX_icon.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

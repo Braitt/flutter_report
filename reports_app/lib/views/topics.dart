@@ -28,7 +28,7 @@ class TopicsView extends StatelessWidget {
             Expanded(
               child: Container(
                 child: VerticalTabs(
-                  selectedTabBackgroundColor: Colors.teal.shade100,
+                  selectedTabBackgroundColor: Colors.grey.shade200,
                   indicatorColor: Colors.blueGrey,
                   itemExtent: deviceWidth * 0.2,
                   contentScrollAxis: Axis.vertical,
@@ -163,7 +163,7 @@ class TopicsView extends StatelessWidget {
           Container(
               width: deviceWidth * 0.7,
               child: RaisedButton(
-                  color: Colors.teal.shade200,
+                  color: Color(int.parse(reportData['color'])),
                   child: Text("DETAILS", style: TextStyle(color: Colors.white)),
                   onPressed: () {
                     Navigator.of(context).push(

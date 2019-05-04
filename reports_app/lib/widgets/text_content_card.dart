@@ -50,6 +50,8 @@ class ContentCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               text == null ? Text('') : Text(text),
+              text != null && circularImage != null ? SizedBox(height: deviceHeight*0.01,) : Container(),
+              text != null && image != null ? SizedBox(height: deviceHeight*0.01,) : Container(),
               image == null
                   ? Container()
                   : Container(
@@ -61,6 +63,7 @@ class ContentCard extends StatelessWidget {
                   : Container(
                       padding: EdgeInsets.all(text == null ? 0 : deviceHeight* 0.02),
                       child: CircleAvatar(
+                        backgroundColor: Colors.transparent,
                         backgroundImage: Image.asset(circularImage).image,
                         radius: deviceHeight* 0.12,
                       ),

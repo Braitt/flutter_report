@@ -1,8 +1,170 @@
 {
     "performance": {
         "title": "Performance",
-        "description": "An app is considered to have poor performance if it responds slowly, shows choppy animations, freezes, crashes, or consumes a lot of power. To avoid these performance problems, use the profiling tools listed on this page to identify where your app is making inefficient use of resources, such as the CPU, memory, graphics, network, and device battery.",
-        "strategy": "Other errors refer to good practices, namely “This class (or a class which this class inherits from) is marked as '@immutable', but one or more of its instance fields are not final: DayTitle.date”.",
-        "comparison": "This refers to having mutable variables (read: just regular variables) in a StatelessWidget, which is inherently inmutable. In these cases, it’s better to mark the variables as inmutable with the “final” keyword. This doesn’t have real impact on the app execution."
+        "content1": [
+            {
+                "title": "Intro",
+                "content": [
+                    {
+                        "text": "We are Rogelio García and Nicolás Hernández.\n\nWelcome to our report!\n\nTo browse this board-like view, swipe down to read each ‘thread’ and swipe right to see another ‘thread’."
+                    },
+                    {
+                        "image": "assets/images/home/fotoRogelio.png"
+                    }
+                ]
+            },
+            {
+                "title": "Apps chosen",
+                "content": [
+                    {
+                        "text": "As flutter is a pretty new thing, finding an app that has over a million downloads on the Play Store is not easy, in fact, only only found Alibaba with 50 million downloads. The second biggest app would be Reflectly with 100.000. Moreover, finding an app that is open-source is even harder. We chose three open-source apps and will be doing different analysis on them: 2T2000s, SpaceX GO! And Platypus Crypto."
+                    }
+                ]
+            },
+            {
+                "title": "2T2000s",
+                "content": [
+                    {
+                        "text": "This app was created for Trinity College at University of Toronto as an app to guide students through the orientation week. It serves as a schedule where students could see when and where activities are due. People can also upload pictures and view others’ pictures. This app showcases breathtaking animations in every Widget and background.",
+                        "circularImage": "assets/images/home/2T2000s_icon.PNG"
+                    },
+                    {
+                        "text": "Finding technical details about this app is not possible. On Github, there are 7 commits.\n\n6 commits were done the 30th of September 2018, including an initial default commit (when the repository was created), four commits each updating the README.md file with new images and one commit containing the whole app.\n\nThe other commit was done the 11th of October; it updates the license."
+                    },
+                    {
+                        "text": "Despite having only four tabs and under 20 views, this app has over 7500 lines of code and 113 classes, most of them Widgets, or related to custom-made animations."
+                    },
+                    {
+                        "text": "The project was done over 3 months by a single person, Matthew Tory, and has since then been displayed on Flutter's webpage."
+                    },
+                    {
+                        "text": "Some screenshots"
+                    },
+                    {
+                        "image": "assets/images/home/2T2000s.png"
+                    },
+                    {
+                        "image": "assets/images/home/2T2000s2.png"
+                    }
+                ]
+            },
+            {
+                "title": "SpaceX GO!",
+                "content": [
+                    {
+                        "text": "SpaceX GO!\nThis app works as a tracking for SpaceX past and upcoming launch dates and news, as well as information about the vessels and the company."
+                    },
+                    {
+                        "text": "Technical info"
+                    }
+                ]
+            },
+            {
+                "title": "Platypus Crypto",
+                "content": [
+                    {
+                        "text": "Platypus Crypto\nThis app is a cryptocurrency tracker. It offers real-time 7-day graphs of prices of the assets, and it supports over 30 currencies."
+                    },
+                    {
+                        "text": "Technical info"
+                    }
+                ]
+            }
+        ],
+        "content2": [
+            {
+                "title": "Intro",
+                "content": [
+                    {
+                        "text": "We are Rogelio García and Nicolás Hernández.\n\nWelcome to our report!\n\nTo browse this board-like view, swipe down to read each ‘thread’ and swipe right to see another ‘thread’."
+                    },
+                    {
+                        "image": "assets/images/home/fotoRogelio.png"
+                    }
+                ]
+            },
+            {
+                "title": "Apps chosen",
+                "content": [
+                    {
+                        "text": "As flutter is a pretty new thing, finding an app that has over a million downloads on the Play Store is not easy, in fact, only only found Alibaba with 50 million downloads. The second biggest app would be Reflectly with 100.000. Moreover, finding an app that is open-source is even harder. We chose three open-source apps and will be doing different analysis on them: 2T2000s, SpaceX GO! And Platypus Crypto."
+                    }
+                ]
+            },
+            {
+                "title": "2T2000s",
+                "content": [
+                    {
+                        "text": "This app was created for Trinity College at University of Toronto as an app to guide students through the orientation week. It serves as a schedule where students could see when and where activities are due. People can also upload pictures and view others’ pictures. This app showcases breathtaking animations in every Widget and background.",
+                        "circularImage": "assets/images/home/2T2000s_icon.PNG"
+                    },
+                    {
+                        "text": "Finding technical details about this app is not possible. On Github, there are 7 commits.\n\n6 commits were done the 30th of September 2018, including an initial default commit (when the repository was created), four commits each updating the README.md file with new images and one commit containing the whole app.\n\nThe other commit was done the 11th of October; it updates the license."
+                    },
+                    {
+                        "text": "Despite having only four tabs and under 20 views, this app has over 7500 lines of code and 113 classes, most of them Widgets, or related to custom-made animations."
+                    },
+                    {
+                        "text": "The project was done over 3 months by a single person, Matthew Tory, and has since then been displayed on Flutter's webpage."
+                    },
+                    {
+                        "text": "Some screenshots"
+                    },
+                    {
+                        "image": "assets/images/home/2T2000s.png"
+                    },
+                    {
+                        "image": "assets/images/home/2T2000s2.png"
+                    }
+                ]
+            },
+            {
+                "title": "SpaceX GO!",
+                "content": [
+                    {
+                        "text": "SpaceX GO!\nThis app works as a tracking for SpaceX past and upcoming launch dates and news, as well as information about the vessels and the company."
+                    },
+                    {
+                        "text": "Technical info"
+                    }
+                ]
+            },
+            {
+                "title": "Platypus Crypto",
+                "content": [
+                    {
+                        "text": "Platypus Crypto\nThis app is a cryptocurrency tracker. It offers real-time 7-day graphs of prices of the assets, and it supports over 30 currencies."
+                    },
+                    {
+                        "text": "Technical info"
+                    }
+                ]
+            }
+        ],
+        "color": "0xFF498467"
+    },
+    "storage": {
+        "title": "Storage & Data Handling",
+        "content1": [],
+        "content2": [],
+        "color": "0xFF1B4079"
+    },
+    "rendering": {
+        "title": "Rendering and Animations",
+        "content1": [],
+        "content2": [],
+        "color": "0xFFDA2C38"
+    },
+    "connectivity": {
+        "title": "Connectivity",
+        "content1": [],
+        "content2": [],
+        "color": "0xFFFFC145"
+    },
+    "code": {
+        "title": "Code structure",
+        "content1": [],
+        "content2": [],
+        "color": "0xFF4B2142"
     }
 }

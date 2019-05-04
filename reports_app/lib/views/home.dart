@@ -12,7 +12,7 @@ class HomeView extends StatefulWidget {
 class _HomeViewState extends State<HomeView> {
   double _horizontalViewPortionFraction = 0.8;
 
-  List<Map<String, dynamic>> _parsedJson;
+  List _parsedJson;
   Map _parsedTopicsJson;
   Map _parsedReportsJson;
 
@@ -117,7 +117,7 @@ class _HomeViewState extends State<HomeView> {
             ? [Text('')]
             : _parsedJson.map((verticalContent) {
                 return VerticalPageView.fromJson(verticalContent);
-              }).toList(),
+              }).toList().cast<Widget>(),
       ),
     );
   }

@@ -1,13 +1,35 @@
 import 'package:flutter/material.dart';
+import '../utils/json_parser.dart';
+import '../widgets/vertical_page_view.dart';
 
-class ReportsView extends StatelessWidget {
-
+class ReportsView extends StatefulWidget {
   final Map _data;
 
   ReportsView(this._data);
 
   @override
+  State<StatefulWidget> createState() => _ReportsViewState();
+}
+
+class _ReportsViewState extends State<ReportsView> {
+  double _horizontalViewPortionFraction = 0.8;
+  PageController _horizontalPageController;
+
+  int _currentHorizontalPage = 0;
+
+  double page = 2.0;
+
+  @override
+  void initState() {
+    super.initState();
+    _horizontalPageController = PageController(
+        initialPage: _currentHorizontalPage,
+        viewportFraction: _horizontalViewPortionFraction);
+  }
+
+  @override
   Widget build(BuildContext context) {
+    print(widget._data);
     return DefaultTabController(
       length: 3,
       child: Scaffold(
@@ -20,11 +42,7 @@ class ReportsView extends StatelessWidget {
             Tab(
               icon: Icon(Icons.directions_transit),
               text: "App 2",
-            ),
-            Tab(
-              icon: Icon(Icons.directions_bike),
-              text: "App 3",
-            ),
+            )
           ],
         ),
         appBar: AppBar(
@@ -32,11 +50,56 @@ class ReportsView extends StatelessWidget {
         ),
         body: TabBarView(
           children: [
-            Icon(Icons.directions_car),
-            Icon(Icons.directions_transit),
-            Icon(Icons.directions_bike),
+            Container(
+              decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                      colors: [
+                    Colors.white,
+                    Color(int.parse(widget._data['color']))
+                  ])),
+              child: _buildPageView(context, 1),
+            ),
+            Container(
+              decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                      colors: [
+                    Colors.white,
+                    Color(widget._data['color'].hashCode)
+                  ])),
+              child: _buildPageView(context, 2),
+            ),
           ],
         ),
+      ),
+    );
+  }
+
+  Widget _buildPageView(BuildContext context, int numTab) {
+    return NotificationListener<ScrollNotification>(
+      onNotification: (ScrollNotification notification) {
+        if (notification is ScrollUpdateNotification) {
+          page = _horizontalPageController.page;
+        }
+      },
+      child: PageView(
+        controller: _horizontalPageController,
+        scrollDirection: Axis.horizontal,
+        physics: BouncingScrollPhysics(),
+        onPageChanged: (page) {
+          _currentHorizontalPage = page;
+        },
+        children: widget._data == null
+            ? [Container()]
+            : widget._data['content' + numTab.toString()]
+                .map((verticalContent) {
+                  return VerticalPageView.fromJson(verticalContent);
+                })
+                .toList()
+                .cast<Widget>(),
       ),
     );
   }
