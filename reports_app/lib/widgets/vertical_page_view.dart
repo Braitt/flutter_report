@@ -4,8 +4,21 @@ import './text_content_card.dart';
 
 class VerticalPageView extends StatefulWidget {
   final List<Map<String, String>> texts;
+  final String title;
 
-  VerticalPageView({@required this.texts});
+  VerticalPageView({@required this.texts, @required this.title});
+
+  factory VerticalPageView.fromJson(Map<String, dynamic> parsedJson) {
+    List<dynamic> content = parsedJson['content'];
+    List<Map<String, String>> parsedContent = [];
+    for (Map<String, dynamic> val in content){
+      Map<String, String> parsedInnerVal = val.cast<String, String>();
+      parsedContent.add(parsedInnerVal);
+    }
+    
+    return VerticalPageView(texts: parsedContent, title: parsedJson["title"]);
+  }
+
 
   @override
   State<StatefulWidget> createState() {
@@ -26,7 +39,7 @@ class _VerticalPageViewState extends State<VerticalPageView> {
             expandedHeight: 100.0,
             title: Padding(
               padding: EdgeInsets.only(top: 30.0),
-              child: Center(child: Text('Info')),
+              child: Center(child: Text(widget.title)),
             ),
           ),
           SliverList(
