@@ -1,17 +1,21 @@
 import 'dart:convert';
 
-List<List<Map<String, String>>> parseContentJson(String data) {
+List<Map<String, dynamic>> parseContentJson(String data) {
   final List<dynamic> jsonResult = json.decode(data);
 
-  List<List<Map<String, String>>> jsonTmp = [];
-  for (List<dynamic> val in jsonResult) {
+  List<Map<String, dynamic>> jsonTmp = [];
+  for (Map<String, dynamic> val in jsonResult) {
+    String title = val['title'];
+    List<dynamic> content = val['content'];
     // horizontal page view list of content
-    List<Map<String, String>> parsedVal = [];
+    Map<String, dynamic> parsedVal = {};
+    parsedVal['content'] = [];
+    parsedVal['title'] = title;
 
-    for (Map<String, dynamic> innerVal in val) {
-      // vertical page views list of content
+    for (Map<String, dynamic> innerVal in content) {
+      // vertical card list of content
       Map<String, String> parsedInnerVal = innerVal.cast<String, String>();
-      parsedVal.add(parsedInnerVal);
+      parsedVal['content'].add(parsedInnerVal);
     }
 
     jsonTmp.add(parsedVal);

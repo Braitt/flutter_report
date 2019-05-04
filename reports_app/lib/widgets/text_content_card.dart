@@ -36,9 +36,8 @@ class ContentCard extends StatelessWidget {
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            image == null ? Container() : Image.asset(image),
             text == null ? Text('') : Text(text),
-            
+            image == null ? Container() : Container(padding: EdgeInsets.all(text == null ? 0 : 20.0), child: Image.asset(image)),
           ],
         ),
       ),
