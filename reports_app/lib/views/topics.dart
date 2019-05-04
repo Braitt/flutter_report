@@ -102,9 +102,12 @@ class TopicsView extends StatelessWidget {
       padding: EdgeInsets.all(deviceWidth * 0.03),
       child: Column(
         children: <Widget>[
-          Text(
-            data['title'],
-            style: TextStyle(fontSize: deviceWidth * 0.08),
+          Center(
+            child: Text(
+              data['title'],
+              style: TextStyle(fontSize: deviceWidth * 0.08),
+              textAlign: TextAlign.center,
+            ),
           ),
           Divider(
             height: deviceWidth * 0.08,
@@ -151,7 +154,7 @@ class TopicsView extends StatelessWidget {
             height: deviceWidth * 0.01,
           ),
           Text(
-            data['comparison'],
+            data['results'],
             style:
                 TextStyle(fontSize: deviceWidth * 0.035, color: Colors.black87),
             textAlign: TextAlign.justify,
