@@ -46,6 +46,7 @@ flutter:
   assets:
     - assets/content/home.json
     - assets/content/topics.json
+    - assets/content/reports.json
     - assets/images/home/2T2000s_icon.PNG
     - assets/images/home/2T2000s.png
     - assets/images/home/2T2000s2.png
