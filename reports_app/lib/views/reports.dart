@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 
 class ReportsView extends StatelessWidget {
+
+  final Map _data;
+
+  ReportsView(this._data);
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(

@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:vertical_tabs/vertical_tabs.dart';
-import 'dart:io';
-import 'dart:convert';
 import './reports.dart';
 
 class TopicsView extends StatelessWidget {
   final Map _data;
+  final Map _reportsData;
 
-  TopicsView(this._data);
+  TopicsView(this._data, this._reportsData);
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +45,7 @@ class TopicsView extends StatelessWidget {
                     Tab(
                       child: Center(
                           child: Icon(
-                        Icons.edit,
+                        Icons.storage,
                         size: sizeForIcons,
                         color: colorForIcons,
                       )),
@@ -54,7 +53,7 @@ class TopicsView extends StatelessWidget {
                     Tab(
                       child: Center(
                           child: Icon(
-                        Icons.battery_charging_full,
+                        Icons.visibility,
                         size: sizeForIcons,
                         color: colorForIcons,
                       )),
@@ -70,7 +69,7 @@ class TopicsView extends StatelessWidget {
                     Tab(
                       child: Center(
                           child: Icon(
-                        Icons.storage,
+                        Icons.edit,
                         size: sizeForIcons,
                         color: colorForIcons,
                       )),
@@ -78,10 +77,10 @@ class TopicsView extends StatelessWidget {
                   ],
                   contents: <Widget>[
                     tabsContent('performance', context),
-                    tabsContent('performance', context),
-                    tabsContent('performance', context),
-                    tabsContent('performance', context),
-                    tabsContent('performance', context),
+                    tabsContent('storage', context),
+                    tabsContent('rendering', context),
+                    tabsContent('connectivity', context),
+                    tabsContent('code', context),
                   ],
                 ),
               ),
@@ -96,6 +95,7 @@ class TopicsView extends StatelessWidget {
     double deviceWidth = MediaQuery.of(context).size.width;
 
     Map data = _data[key];
+    Map reportData = _reportsData[key];
 
     return Container(
       margin: EdgeInsets.all(deviceWidth * 0.03),
@@ -166,7 +166,7 @@ class TopicsView extends StatelessWidget {
                     Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (BuildContext context) {
-                          return ReportsView();
+                          return ReportsView(reportData);
                         },
                       ),
                     );
