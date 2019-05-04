@@ -23,7 +23,7 @@ class ReportsView extends StatelessWidget {
           ],
         ),
         appBar: AppBar(
-          title: Text('Tabs Demo'),
+          title: Text('Reports'),
         ),
         body: TabBarView(
           children: [

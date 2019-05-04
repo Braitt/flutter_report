@@ -5,20 +5,12 @@ import 'dart:convert';
 import './reports.dart';
 
 class TopicsView extends StatelessWidget {
-  final contentRoute = "assets/content/topics.json";
-  final Map data;
+  final Map _data;
 
-  TopicsView([this.data]);
+  TopicsView(this._data);
 
   @override
   Widget build(BuildContext context) {
-    new File(contentRoute)
-        .readAsString()
-        .then((fileContents) => jsonDecode(fileContents))
-        .then((jsonData) {
-      print(jsonData);
-    });
-
     double deviceWidth = MediaQuery.of(context).size.width;
     double sizeForIcons = deviceWidth * 0.07;
     Color colorForIcons = Colors.grey.shade700;
@@ -26,7 +18,7 @@ class TopicsView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         iconTheme: IconThemeData(
-          color: Theme.of(context).primaryColor,
+          color: Colors.black,
         ),
         title: Text('Topics', style: TextStyle(color: Colors.black)),
         backgroundColor: Colors.white,
@@ -85,34 +77,11 @@ class TopicsView extends StatelessWidget {
                     )
                   ],
                   contents: <Widget>[
-                    tabsContent('Flutter', context),
-                    tabsContent('Dart', context),
-                    tabsContent('Javascript', context),
-                    tabsContent('NodeJS', context),
-                    /* Container(
-                        color: Colors.black12,
-                        child: ListView.builder(
-                            itemCount: 10,
-                            itemExtent: 100,
-                            itemBuilder: (context, index) {
-                              return Container(
-                                margin: EdgeInsets.all(10),
-                                color: Colors.white30,
-                              );
-                            })), */
-                    tabsContent('HTML 5', context),
-                    /*  Container(
-                        color: Colors.black12,
-                        child: ListView.builder(
-                            scrollDirection: Axis.horizontal,
-                            itemCount: 10,
-                            itemExtent: 100,
-                            itemBuilder: (context, index) {
-                              return Container(
-                                margin: EdgeInsets.all(10),
-                                color: Colors.white30,
-                              );
-                            })), */
+                    tabsContent('performance', context),
+                    tabsContent('performance', context),
+                    tabsContent('performance', context),
+                    tabsContent('performance', context),
+                    tabsContent('performance', context),
                   ],
                 ),
               ),
@@ -124,35 +93,84 @@ class TopicsView extends StatelessWidget {
   }
 
   Widget tabsContent(String key, BuildContext context) {
+    double deviceWidth = MediaQuery.of(context).size.width;
+
+    Map data = _data[key];
+
     return Container(
-      margin: EdgeInsets.all(10),
-      padding: EdgeInsets.all(20),
+      margin: EdgeInsets.all(deviceWidth * 0.03),
+      padding: EdgeInsets.all(deviceWidth * 0.03),
       child: Column(
         children: <Widget>[
           Text(
-            "Performance",
-            style: TextStyle(fontSize: 25),
+            data['title'],
+            style: TextStyle(fontSize: deviceWidth * 0.08),
           ),
           Divider(
-            height: 20,
+            height: deviceWidth * 0.08,
             color: Colors.black45,
           ),
           Text(
-            "xd",
-            style: TextStyle(fontSize: 15, color: Colors.black87),
+            data['description'],
+            style:
+                TextStyle(fontSize: deviceWidth * 0.04, color: Colors.black87),
+            textAlign: TextAlign.justify,
+          ),
+          SizedBox(
+            height: deviceWidth * 0.05,
+          ),
+          Text(
+            "Profiling strategy",
+            style: TextStyle(
+                fontSize: deviceWidth * 0.035,
+                color: Colors.black87,
+                fontWeight: FontWeight.bold),
+            textAlign: TextAlign.center,
+          ),
+          SizedBox(
+            height: deviceWidth * 0.01,
+          ),
+          Text(
+            data['strategy'],
+            style:
+                TextStyle(fontSize: deviceWidth * 0.035, color: Colors.black87),
+            textAlign: TextAlign.justify,
+          ),
+          SizedBox(
+            height: deviceWidth * 0.05,
+          ),
+          Text(
+            "Results",
+            style: TextStyle(
+                fontSize: deviceWidth * 0.035,
+                color: Colors.black87,
+                fontWeight: FontWeight.bold),
+            textAlign: TextAlign.center,
+          ),
+          SizedBox(
+            height: deviceWidth * 0.01,
+          ),
+          Text(
+            data['comparison'],
+            style:
+                TextStyle(fontSize: deviceWidth * 0.035, color: Colors.black87),
+            textAlign: TextAlign.justify,
           ),
           Expanded(child: Container()),
           Container(
-              width: 400,
-              child: RaisedButton(color: Colors.teal.shade200, child: Text("DETAILS", style: TextStyle(color: Colors.white)), onPressed: () {
-                Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (BuildContext context) {
-                            return ReportsView();
-                          },
-                        ),
-                      );
-              }))
+              width: deviceWidth * 0.7,
+              child: RaisedButton(
+                  color: Colors.teal.shade200,
+                  child: Text("DETAILS", style: TextStyle(color: Colors.white)),
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (BuildContext context) {
+                          return ReportsView();
+                        },
+                      ),
+                    );
+                  }))
         ],
       ),
     );

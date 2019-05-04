@@ -18,3 +18,8 @@ List<List<Map<String, String>>> parseContentJson(String data) {
   }
   return jsonTmp;
 }
+
+Map parseContentTopicsJson(String data) {
+  final Map jsonResult = json.decode(data);
+  return jsonResult;
+}
