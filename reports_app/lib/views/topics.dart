@@ -46,7 +46,7 @@ class TopicsView extends StatelessWidget {
                     Tab(
                       child: Center(
                           child: Icon(
-                        Icons.edit,
+                        Icons.storage,
                         size: sizeForIcons,
                         color: colorForIcons,
                       )),
@@ -54,7 +54,7 @@ class TopicsView extends StatelessWidget {
                     Tab(
                       child: Center(
                           child: Icon(
-                        Icons.battery_charging_full,
+                        Icons.visibility,
                         size: sizeForIcons,
                         color: colorForIcons,
                       )),
@@ -70,7 +70,7 @@ class TopicsView extends StatelessWidget {
                     Tab(
                       child: Center(
                           child: Icon(
-                        Icons.storage,
+                        Icons.edit,
                         size: sizeForIcons,
                         color: colorForIcons,
                       )),
@@ -78,10 +78,10 @@ class TopicsView extends StatelessWidget {
                   ],
                   contents: <Widget>[
                     tabsContent('performance', context),
-                    tabsContent('performance', context),
-                    tabsContent('performance', context),
-                    tabsContent('performance', context),
-                    tabsContent('performance', context),
+                    tabsContent('storage', context),
+                    tabsContent('rendering', context),
+                    tabsContent('connectivity', context),
+                    tabsContent('code', context),
                   ],
                 ),
               ),

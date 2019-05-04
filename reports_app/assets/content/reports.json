@@ -1,0 +1,8 @@
+{
+    "performance": {
+        "title": "Performance",
+        "description": "An app is considered to have poor performance if it responds slowly, shows choppy animations, freezes, crashes, or consumes a lot of power. To avoid these performance problems, use the profiling tools listed on this page to identify where your app is making inefficient use of resources, such as the CPU, memory, graphics, network, and device battery.",
+        "strategy": "Other errors refer to good practices, namely “This class (or a class which this class inherits from) is marked as '@immutable', but one or more of its instance fields are not final: DayTitle.date”.",
+        "comparison": "This refers to having mutable variables (read: just regular variables) in a StatelessWidget, which is inherently inmutable. In these cases, it’s better to mark the variables as inmutable with the “final” keyword. This doesn’t have real impact on the app execution."
+    }
+}
