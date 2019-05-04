@@ -35,6 +35,8 @@ class _VerticalPageViewState extends State<VerticalPageView> {
       child: CustomScrollView(
         slivers: <Widget>[
           SliverAppBar(
+            automaticallyImplyLeading: false,
+            centerTitle: true,
             backgroundColor: Colors.transparent,
             expandedHeight: 100.0,
             title: Padding(

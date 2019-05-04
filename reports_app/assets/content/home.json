@@ -34,7 +34,9 @@
 			{
 				"text": "The project was done over 3 months by a single person, Matthew Tory, and has since then been displayed on Flutter's webpage."
 			},
-			{"text": "Some screenshots"},
+			{
+				"text": "Some screenshots"
+			},
 			{
 				"image": "assets/images/home/2T2000s.png"
 			},
@@ -47,21 +49,17 @@
 		"title": "SpaceX GO!",
 		"content": [
 			{
-				"text": "SpaceX GO!\nThis app works as a tracking for SpaceX past and upcoming launch dates and news, as well as information about the vessels and the company."
+				"text": "This app works as a tracking for SpaceX past and upcoming launch dates and news, as well as information about the vessels and the company.",
+				"circularImage": "assets/images/home/SpaceX_icon.png"
 			},
 			{
 				"text": "Technical info"
-			}
-		]
-	},
-	{
-		"title": "Platypus Crypto",
-		"content": [
-			{
-				"text": "Platypus Crypto\nThis app is a cryptocurrency tracker. It offers real-time 7-day graphs of prices of the assets, and it supports over 30 currencies."
 			},
 			{
-				"text": "Technical info"
+				"image": "assets/images/home/SpaceX_1.jpg"
+			},
+			{
+				"image": "assets/images/home/SpaceX_2.jpg"
 			}
 		]
 	}
