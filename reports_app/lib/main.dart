@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: Color(0xFFFFFFFF),
         accentColor: Colors.transparent,
-        backgroundColor: Color(0xFFEB6C48),
+        backgroundColor: Colors.blueGrey,
         cardColor: Color(0xEEFFFFFF),
         buttonColor: Colors.lightBlueAccent
       ),
