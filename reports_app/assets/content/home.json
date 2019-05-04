@@ -7,9 +7,6 @@
 			},
 			{
 				"image": "assets/images/home/fotoRogelio.png"
-			},
-			{
-				"image": "assets/images/guao.png"
 			}
 		]
 	},
@@ -54,9 +51,6 @@
 			},
 			{
 				"text": "Technical info"
-			},
-			{
-				"image": "assets/images/guao.png"
 			}
 		]
 	},
@@ -68,9 +62,6 @@
 			},
 			{
 				"text": "Technical info"
-			},
-			{
-				"image": "assets/images/guao.png"
 			}
 		]
 	}
