@@ -166,7 +166,7 @@ class TopicsView extends StatelessWidget {
                     Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (BuildContext context) {
-                          return ReportsView();
+                          return ReportsView(key);
                         },
                       ),
                     );
