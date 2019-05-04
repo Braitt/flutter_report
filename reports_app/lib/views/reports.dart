@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 class ReportsView extends StatelessWidget {
 
-  final String topicKey;
+  final Map _data;
 
-  ReportsView(this.topicKey);
+  ReportsView(this._data);
 
   @override
   Widget build(BuildContext context) {

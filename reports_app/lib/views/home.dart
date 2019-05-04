@@ -14,6 +14,7 @@ class _HomeViewState extends State<HomeView> {
 
   List<Map<String, dynamic>> _parsedJson;
   Map _parsedTopicsJson;
+  Map _parsedReportsJson;
 
   PageController _horizontalPageController;
 
@@ -41,6 +42,14 @@ class _HomeViewState extends State<HomeView> {
         .then((data) {
       setState(() {
         _parsedTopicsJson = parseContentTopicsJson(data);
+      });
+    });
+
+    DefaultAssetBundle.of(context)
+        .loadString('assets/content/reports.json')
+        .then((data) {
+      setState(() {
+        _parsedReportsJson = parseContentReportsJson(data);
       });
     });
   }
@@ -75,7 +84,7 @@ class _HomeViewState extends State<HomeView> {
                       Navigator.of(context).push(
                         MaterialPageRoute(
                           builder: (BuildContext context) {
-                            return TopicsView(_parsedTopicsJson);
+                            return TopicsView(_parsedTopicsJson, _parsedReportsJson);
                           },
                         ),
                       );
