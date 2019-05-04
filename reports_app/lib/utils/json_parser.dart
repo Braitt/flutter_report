@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-List<List<Map<String, String>>> parseJson(String data) {
+List<List<Map<String, String>>> parseContentJson(String data) {
   final List<dynamic> jsonResult = json.decode(data);
 
   List<List<Map<String, String>>> jsonTmp = [];

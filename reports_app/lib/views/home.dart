@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../utils/json_parser.dart';
 import '../widgets/vertical_page_view.dart';
+import './topics.dart';
 
 class HomeView extends StatefulWidget {
   @override
@@ -25,11 +26,12 @@ class _HomeViewState extends State<HomeView> {
     _horizontalPageController = PageController(
         initialPage: _currentHorizontalPage,
         viewportFraction: _horizontalViewPortionFraction);
+
     DefaultAssetBundle.of(context)
         .loadString('assets/content/home.json')
         .then((data) {
       setState(() {
-        _parsedJson = parseJson(data);
+        _parsedJson = parseContentJson(data);
       });
     });
   }
@@ -40,15 +42,42 @@ class _HomeViewState extends State<HomeView> {
       backgroundColor: Theme.of(context).backgroundColor,
       appBar: AppBar(
         title: Text('Home'),
-        elevation: 0.0,
+        elevation: 2.0,
       ),
       body: Container(
           decoration: BoxDecoration(
               gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: [Colors.teal, Theme.of(context).cardColor])),
-          child: _buildPageView(context)),
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                Theme.of(context).cardColor,
+                Theme.of(context).backgroundColor
+              ])),
+          child: Stack(
+            children: <Widget>[
+              _buildPageView(context),
+              Align(
+                child: SizedBox(
+                  width: 70,
+                  height: 70,
+                  child: FloatingActionButton(
+                    child: Icon(Icons.line_weight),
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (BuildContext context) {
+                            return TopicsView();
+                          },
+                        ),
+                      );
+                    },
+                    backgroundColor: Theme.of(context).buttonColor,
+                  ),
+                ),
+                alignment: FractionalOffset(0.9, 0.95),
+              )
+            ],
+          )),
     );
   }
 
@@ -66,7 +95,6 @@ class _HomeViewState extends State<HomeView> {
         onPageChanged: (page) {
           _currentHorizontalPage = page;
         },
-        reverse: true,
         children: _parsedJson == null
             ? [Text('')]
             : _parsedJson.map((verticalContent) {

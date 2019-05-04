@@ -2,20 +2,20 @@ import 'package:flutter/material.dart';
 
 import '../views/topics.dart';
 
-class TextContentCard extends StatelessWidget {
+class ContentCard extends StatelessWidget {
   final String text;
   final String image;
 
-  TextContentCard({this.text, this.image});
+  ContentCard({this.text, this.image});
 
-  factory TextContentCard.fromJson(Map<String, dynamic> parsedJson) {
+  factory ContentCard.fromJson(Map<String, dynamic> parsedJson) {
     if (parsedJson.containsKey('text') && parsedJson.containsKey('image')) {
-      return TextContentCard(
+      return ContentCard(
           text: parsedJson['text'], image: parsedJson['image']);
     } else if (parsedJson.containsKey('text')) {
-      return TextContentCard(text: parsedJson['text']);
+      return ContentCard(text: parsedJson['text']);
     } else if (parsedJson.containsKey('image')) {
-      return TextContentCard(image: parsedJson['image']);
+      return ContentCard(image: parsedJson['image']);
     } else {
       // This should throw an exception in runtime
       return null;
@@ -31,24 +31,14 @@ class TextContentCard extends StatelessWidget {
           borderRadius: BorderRadius.all(Radius.circular(20.0))),
       margin: EdgeInsets.all(10.0),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+        padding: const EdgeInsets.all(20.0),
         child: Column(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            image == null ? Container() : Image.asset(image),
             text == null ? Text('') : Text(text),
-            image == null ? Text('') : Image.asset(image),
-            RaisedButton(
-                child: Text('Details for topic'),
-                onPressed: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (BuildContext context) {
-                        return TopicsView();
-                      },
-                    ),
-                  ).then((_) {});
-                })
+            
           ],
         ),
       ),

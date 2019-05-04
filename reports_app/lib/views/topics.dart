@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:vertical_tabs/vertical_tabs.dart';
 import 'dart:io';
 import 'dart:convert';
+import './reports.dart';
 
 class TopicsView extends StatelessWidget {
-
   final contentRoute = "assets/content/topics.json";
   final Map data;
 
@@ -12,12 +12,11 @@ class TopicsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     new File(contentRoute)
-    .readAsString()
-    .then((fileContents) => jsonDecode(fileContents))
-    .then((jsonData) {
-        print(jsonData);
+        .readAsString()
+        .then((fileContents) => jsonDecode(fileContents))
+        .then((jsonData) {
+      print(jsonData);
     });
 
     double deviceWidth = MediaQuery.of(context).size.width;
@@ -45,26 +44,51 @@ class TopicsView extends StatelessWidget {
                   tabsWidth: deviceWidth * 0.12,
                   tabs: <Tab>[
                     Tab(
-                       child: Center(child: Icon(Icons.settings, size: sizeForIcons, color: colorForIcons,)),
+                      child: Center(
+                          child: Icon(
+                        Icons.settings,
+                        size: sizeForIcons,
+                        color: colorForIcons,
+                      )),
                     ),
                     Tab(
-                      child: Center(child: Icon(Icons.edit, size: sizeForIcons, color: colorForIcons,)),
+                      child: Center(
+                          child: Icon(
+                        Icons.edit,
+                        size: sizeForIcons,
+                        color: colorForIcons,
+                      )),
                     ),
                     Tab(
-                       child: Center(child: Icon(Icons.battery_charging_full, size: sizeForIcons, color: colorForIcons,)),
+                      child: Center(
+                          child: Icon(
+                        Icons.battery_charging_full,
+                        size: sizeForIcons,
+                        color: colorForIcons,
+                      )),
                     ),
                     Tab(
-                       child: Center(child: Icon(Icons.signal_cellular_4_bar, size: sizeForIcons, color: colorForIcons,)),
+                      child: Center(
+                          child: Icon(
+                        Icons.signal_cellular_4_bar,
+                        size: sizeForIcons,
+                        color: colorForIcons,
+                      )),
                     ),
                     Tab(
-                       child: Center(child: Icon(Icons.storage, size: sizeForIcons, color: colorForIcons,)),
+                      child: Center(
+                          child: Icon(
+                        Icons.storage,
+                        size: sizeForIcons,
+                        color: colorForIcons,
+                      )),
                     )
                   ],
                   contents: <Widget>[
-                    tabsContent('Flutter'),
-                    tabsContent('Dart'),
-                    tabsContent('Javascript'),
-                    tabsContent('NodeJS'),
+                    tabsContent('Flutter', context),
+                    tabsContent('Dart', context),
+                    tabsContent('Javascript', context),
+                    tabsContent('NodeJS', context),
                     /* Container(
                         color: Colors.black12,
                         child: ListView.builder(
@@ -76,8 +100,8 @@ class TopicsView extends StatelessWidget {
                                 color: Colors.white30,
                               );
                             })), */
-                    tabsContent('HTML 5'),
-                   /*  Container(
+                    tabsContent('HTML 5', context),
+                    /*  Container(
                         color: Colors.black12,
                         child: ListView.builder(
                             scrollDirection: Axis.horizontal,
@@ -99,15 +123,14 @@ class TopicsView extends StatelessWidget {
     );
   }
 
-  Widget tabsContent(String key) {
+  Widget tabsContent(String key, BuildContext context) {
     return Container(
       margin: EdgeInsets.all(10),
       padding: EdgeInsets.all(20),
-      color: Colors.black12,
       child: Column(
         children: <Widget>[
           Text(
-            "xd",
+            "Performance",
             style: TextStyle(fontSize: 25),
           ),
           Divider(
@@ -118,6 +141,18 @@ class TopicsView extends StatelessWidget {
             "xd",
             style: TextStyle(fontSize: 15, color: Colors.black87),
           ),
+          Expanded(child: Container()),
+          Container(
+              width: 400,
+              child: RaisedButton(color: Colors.teal.shade200, child: Text("DETAILS", style: TextStyle(color: Colors.white)), onPressed: () {
+                Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (BuildContext context) {
+                            return ReportsView();
+                          },
+                        ),
+                      );
+              }))
         ],
       ),
     );
