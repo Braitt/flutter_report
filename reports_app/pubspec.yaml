@@ -51,6 +51,10 @@ flutter:
     - assets/images/home/2T2000s.png
     - assets/images/home/2T2000s2.png
     - assets/images/home/fotoRogelio.png
+    - assets/images/performance/noLoadedFilters.gif
+    - assets/images/performance/noLoadedFilters(1).gif
+    - assets/images/performance/loadedFilters.gif
+    - assets/images/performance/loadedFilters(1).gif
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
