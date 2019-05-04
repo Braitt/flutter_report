@@ -6,10 +6,7 @@
 				"text": "We are Rogelio García and Nicolás Hernández.\n\nWelcome to our report!\n\nTo browse this board-like view, swipe down to read each ‘thread’ and swipe right to see another ‘thread’."
 			},
 			{
-				"circularImage": "assets/images/home/fotoRogelio.png"
-			},
-			{
-				"image": "assets/images/guao.png"
+				"image": "assets/images/home/fotoRogelio.png"
 			}
 		]
 	},
@@ -54,9 +51,6 @@
 			},
 			{
 				"text": "Technical info"
-			},
-			{
-				"image": "assets/images/guao.png"
 			}
 		]
 	},
@@ -68,9 +62,6 @@
 			},
 			{
 				"text": "Technical info"
-			},
-			{
-				"image": "assets/images/guao.png"
 			}
 		]
 	}
