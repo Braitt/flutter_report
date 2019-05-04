@@ -19,6 +19,9 @@ class ContentCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    double deviceHeight = MediaQuery.of(context).size.height;
+
     if (image != null && text == null && circularImage == null) {
       return Card(
         semanticContainer: true,
@@ -28,20 +31,20 @@ class ContentCard extends StatelessWidget {
           fit: BoxFit.fill,
         ),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10.0),
+          borderRadius: BorderRadius.circular(deviceHeight* 0.02),
         ),
         elevation: 5,
-        margin: EdgeInsets.all(10),
+        margin: EdgeInsets.all(deviceHeight* 0.01),
       );
     } else {
       return Card(
         elevation: 2.0,
         clipBehavior: Clip.antiAlias,
         shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(20.0))),
-        margin: EdgeInsets.all(10.0),
+            borderRadius: BorderRadius.all(Radius.circular(deviceHeight* 0.02))),
+        margin: EdgeInsets.all(deviceHeight* 0.01),
         child: Padding(
-          padding: const EdgeInsets.all(20.0),
+          padding: EdgeInsets.all(deviceHeight* 0.025),
           child: Column(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.center,
@@ -50,16 +53,16 @@ class ContentCard extends StatelessWidget {
               image == null
                   ? Container()
                   : Container(
-                      padding: EdgeInsets.all(text == null ? 0 : 20.0),
+                      padding: EdgeInsets.all(text == null ? 0 : deviceHeight* 0.02),
                       child: Image.asset(image),
                     ),
               circularImage == null
                   ? Container()
                   : Container(
-                      padding: EdgeInsets.all(text == null ? 0 : 20.0),
+                      padding: EdgeInsets.all(text == null ? 0 : deviceHeight* 0.02),
                       child: CircleAvatar(
                         backgroundImage: Image.asset(circularImage).image,
-                        radius: 120.0,
+                        radius: deviceHeight* 0.12,
                       ),
                     ),
             ],
