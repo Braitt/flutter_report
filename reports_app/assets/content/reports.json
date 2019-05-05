@@ -3,67 +3,102 @@
         "title": "Performance",
         "content1": [
             {
-                "title": "Intro",
+                "title": "Static profiling",
                 "content": [
                     {
-                        "text": "We are Rogelio García and Nicolás Hernández.\n\nWelcome to our report!\n\nTo browse this board-like view, swipe down to read each ‘thread’ and swipe right to see another ‘thread’."
+                        "subtitle": "How did we do it?"
                     },
                     {
-                        "image": "assets/images/home/fotoRogelio.png"
+                        "text": "The static profiling tool used was Dart Analyzer. It is available on Visual Code Studio, included in either Flutter’s or Dart’s plugin. Having used this profiler for the project, we found that it’s very useful in alerting errors and warnings opportunely."
+                    },
+                    {
+                        "subtitle": "Results"
+                    },
+                    {
+                        "text": "Static profiling detected 94 problems spread across 17 files. "
+                    },
+                    {
+                        "image": "assets/images/home/2T2000s.png"
                     }
                 ]
             },
             {
-                "title": "Apps chosen",
+                "title": "Multithreading",
                 "content": [
                     {
-                        "text": "As flutter is a pretty new thing, finding an app that has over a million downloads on the Play Store is not easy, in fact, only only found Alibaba with 50 million downloads. The second biggest app would be Reflectly with 100.000. Moreover, finding an app that is open-source is even harder. We chose three open-source apps and will be doing different analysis on them: 2T2000s, SpaceX GO! And Platypus Crypto."
+                        "subtitle":"Threading in this app"
+                    },
+                    {
+                        "text": "This app has no actual multithreading, i.e., no isolates were used, and thus all the developed code runs in a single thread.\nOn the other hand, asynchronous calls are handled with simple placeholders, like using CircularProgressIndicators when there is no data available."
+                    },
+                    {
+                        "image": "assets/images/home/2T2000s.png"
                     }
                 ]
             },
             {
-                "title": "2T2000s",
+                "title": "Memory",
                 "content": [
                     {
-                        "text": "This app was created for Trinity College at University of Toronto as an app to guide students through the orientation week. It serves as a schedule where students could see when and where activities are due. People can also upload pictures and view others’ pictures. This app showcases breathtaking animations in every Widget and background.",
-                        "circularImage": "assets/images/home/2T2000s_icon.PNG"
+                        "subtitle": "How did we do it?"
                     },
                     {
-                        "text": "Finding technical details about this app is not possible. On Github, there are 7 commits.\n\n6 commits were done the 30th of September 2018, including an initial default commit (when the repository was created), four commits each updating the README.md file with new images and one commit containing the whole app.\n\nThe other commit was done the 11th of October; it updates the license."
+                        "text": "We used an application made for profiling general performance on a mobile device (Simple System Monitor) and it helped us to measure CPU and memory usage. The following tests were made on a Huawei Mate 10 Pro (6GB RAM, 8-core (4-2.32 Mhz, 4-1.86 Mhz) and 128 GB Storage), and every app was open on a sandbox environment with no other processes in background but main operating system."
                     },
                     {
-                        "text": "Despite having only four tabs and under 20 views, this app has over 7500 lines of code and 113 classes, most of them Widgets, or related to custom-made animations."
+                        "subtitle": "Tests"
                     },
                     {
-                        "text": "The project was done over 3 months by a single person, Matthew Tory, and has since then been displayed on Flutter's webpage."
+                        "text": "Tests took about 500 seconds as profiling app allow. This information presents average frequency used by each one of cores and average GB used of memory during the test. Main features of the applications were used and we tried not to open external applications (e.g. Youtube, web browser, etc.)."
+                    },
+                    {
+                        "subtitle": "Initial state"
                     },
                     {
                         "text": "Some screenshots"
                     },
                     {
-                        "image": "assets/images/home/2T2000s.png"
+                        "subtitle": "Final state"
                     },
                     {
-                        "image": "assets/images/home/2T2000s2.png"
+                        "text": "hola"
                     }
                 ]
             },
             {
-                "title": "SpaceX GO!",
+                "title": "CPU",
+                "content": [
+                    {
+                        "subtitle": "How did we do it?"
+                    },
+                    {
+                        "text": "We used an application made for profiling general performance on a mobile device (Simple System Monitor) and it helped us to measure CPU and memory usage. The following tests were made on a Huawei Mate 10 Pro (6GB RAM, 8-core (4-2.32 Mhz, 4-1.86 Mhz) and 128 GB Storage), and every app was open on a sandbox environment with no other processes in background but main operating system."
+                    },
+                    {
+                        "subtitle": "Tests"
+                    },
+                    {
+                        "text": "Tests took about 500 seconds as profiling app allow. This information presents average frequency used by each one of cores and average GB used of memory during the test. Main features of the applications were used and we tried not to open external applications (e.g. Youtube, web browser, etc.)."
+                    },
+                    {
+                        "subtitle": "Initial state"
+                    },
+                    {
+                        "text": "Some screenshots"
+                    },
+                    {
+                        "subtitle": "Final state"
+                    },
+                    {
+                        "text": "hola"
+                    }
+                ]
+            },
+            {
+                "title": "Battery",
                 "content": [
                     {
                         "text": "SpaceX GO!\nThis app works as a tracking for SpaceX past and upcoming launch dates and news, as well as information about the vessels and the company."
-                    },
-                    {
-                        "text": "Technical info"
-                    }
-                ]
-            },
-            {
-                "title": "Platypus Crypto",
-                "content": [
-                    {
-                        "text": "Platypus Crypto\nThis app is a cryptocurrency tracker. It offers real-time 7-day graphs of prices of the assets, and it supports over 30 currencies."
                     },
                     {
                         "text": "Technical info"

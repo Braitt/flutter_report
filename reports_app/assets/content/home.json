@@ -53,7 +53,7 @@
 				"circularImage": "assets/images/home/SpaceX_icon.png"
 			},
 			{
-				"text": "Technical info"
+				"subtitle": "Technical info"
 			},
 			{
 				"image": "assets/images/home/SpaceX_1.jpg"
