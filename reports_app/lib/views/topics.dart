@@ -105,7 +105,7 @@ class TopicsView extends StatelessWidget {
           Center(
             child: Text(
               data['title'],
-              style: TextStyle(fontSize: deviceWidth * 0.08),
+              style: TextStyle(fontSize: deviceWidth * 0.07),
               textAlign: TextAlign.center,
             ),
           ),
@@ -113,52 +113,63 @@ class TopicsView extends StatelessWidget {
             height: deviceWidth * 0.08,
             color: Colors.black45,
           ),
-          Text(
-            data['description'],
-            style:
-                TextStyle(fontSize: deviceWidth * 0.04, color: Colors.black87),
-            textAlign: TextAlign.justify,
-          ),
+          data['description'] != null
+              ? Text(
+                  data['description'],
+                  style: TextStyle(
+                      fontSize: deviceWidth * 0.03, color: Colors.black87),
+                  textAlign: TextAlign.justify,
+                )
+              : Container(),
           SizedBox(
-            height: deviceWidth * 0.05,
+            height: deviceWidth * 0.04,
           ),
-          Text(
-            "Profiling strategy",
-            style: TextStyle(
-                fontSize: deviceWidth * 0.035,
-                color: Colors.black87,
-                fontWeight: FontWeight.bold),
-            textAlign: TextAlign.center,
-          ),
+          data['strategy'] != null
+              ? Text(
+                  "Strategy",
+                  style: TextStyle(
+                      fontSize: deviceWidth * 0.03,
+                      color: Colors.black87,
+                      fontWeight: FontWeight.bold),
+                  textAlign: TextAlign.center,
+                )
+              : Container(),
           SizedBox(
-            height: deviceWidth * 0.01,
+            height: deviceWidth * 0.02,
           ),
-          Text(
-            data['strategy'],
-            style:
-                TextStyle(fontSize: deviceWidth * 0.035, color: Colors.black87),
-            textAlign: TextAlign.justify,
-          ),
+          data['strategy'] != null
+              ? Text(
+                  data['strategy'],
+                  style: TextStyle(
+                      fontSize: deviceWidth * 0.03, color: Colors.black87),
+                  textAlign: TextAlign.justify,
+                )
+              : Container(),
           SizedBox(
-            height: deviceWidth * 0.05,
+            height: deviceWidth * 0.04,
           ),
-          Text(
-            "Results",
-            style: TextStyle(
-                fontSize: deviceWidth * 0.035,
-                color: Colors.black87,
-                fontWeight: FontWeight.bold),
-            textAlign: TextAlign.center,
-          ),
+          data['results'] != null
+              ? Text(
+                  "Results",
+                  style: TextStyle(
+                      fontSize: deviceWidth * 0.03,
+                      color: Colors.black87,
+                      fontWeight: FontWeight.bold),
+                  textAlign: TextAlign.center,
+                )
+              : Container(),
           SizedBox(
-            height: deviceWidth * 0.01,
+            height: deviceWidth * 0.02,
           ),
-          Text(
-            data['results'],
-            style:
-                TextStyle(fontSize: deviceWidth * 0.035, color: Colors.black87),
-            textAlign: TextAlign.justify,
-          ),
+          data['results'] != null
+              ? Text(
+                  data['results'],
+                  style: TextStyle(
+                      fontSize: deviceWidth * 0.03, color: Colors.black87),
+                  textAlign: TextAlign.justify,
+                )
+              : Container(),
+          data['image'] != null ? Image.asset(data['image']) : Container(),
           Expanded(child: Container()),
           Container(
               width: deviceWidth * 0.7,

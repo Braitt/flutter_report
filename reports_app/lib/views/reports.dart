@@ -29,7 +29,6 @@ class _ReportsViewState extends State<ReportsView> {
 
   @override
   Widget build(BuildContext context) {
-    print(widget._data);
     return DefaultTabController(
       length: 2,
       child: Scaffold(

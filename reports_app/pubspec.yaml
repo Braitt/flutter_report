@@ -64,6 +64,14 @@ flutter:
     - assets/images/performance/cpu_usage_spacex.jpg 
     - assets/images/performance/memory_usage_2T2000S.jpg  
     - assets/images/performance/cpu_usage_2T2000S.jpg 
+    - assets/images/performance/lint_2_2T2000S.jpg
+    - assets/images/performance/lint_3_2T2000S.png
+    - assets/images/performance/lint_2T2000S.jpg
+    - assets/images/performance/multithreading_2T2000S.jpg
+    - assets/images/performance/results.jpg
+    - assets/images/storage/storage_1_2T2000S.png
+    - assets/images/storage/storage_2_2T2000S.png
+    - assets/images/storage/storage_3_2T2000S.png
     - assets/images/home/SpaceX_1.jpg
     - assets/images/home/SpaceX_2.jpg
     - assets/images/home/SpaceX_icon.png
