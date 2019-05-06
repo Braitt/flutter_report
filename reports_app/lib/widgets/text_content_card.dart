@@ -7,8 +7,10 @@ class ContentCard extends StatelessWidget {
   final String image;
   final String circularImage;
   final String subtitle;
+  final String refs;
 
-  ContentCard({this.text, this.image, this.circularImage, this.subtitle});
+  ContentCard(
+      {this.text, this.image, this.circularImage, this.subtitle, this.refs});
 
   factory ContentCard.fromJson(Map<String, dynamic> parsedJson) {
     return ContentCard(
@@ -16,6 +18,7 @@ class ContentCard extends StatelessWidget {
       image: parsedJson['image'],
       circularImage: parsedJson['circularImage'],
       subtitle: parsedJson['subtitle'],
+      refs: parsedJson['refs'],
     );
   }
 
@@ -54,7 +57,9 @@ class ContentCard extends StatelessWidget {
               subtitle != null
                   ? Text(
                       subtitle,
-                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: deviceHeight*0.02),
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: deviceHeight * 0.02),
                     )
                   : Container(),
               subtitle != null && text != null
@@ -91,6 +96,40 @@ class ContentCard extends StatelessWidget {
                         radius: deviceHeight * 0.12,
                       ),
                     ),
+              refs != null
+                  ? Align(
+                      child: IconButton(
+                        icon: Icon(Icons.more_horiz),
+                        onPressed: () {
+                          showModalBottomSheet<void>(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return new Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: <Widget>[
+                                    new ListTile(
+                                      leading: new Icon(Icons.music_note),
+                                      title: new Text('Music'),
+                                      onTap: () {},
+                                    ),
+                                    new ListTile(
+                                      leading: new Icon(Icons.photo_album),
+                                      title: new Text('Photos'),
+                                      onTap: () {},
+                                    ),
+                                    new ListTile(
+                                      leading: new Icon(Icons.videocam),
+                                      title: new Text('Video'),
+                                      onTap: () {},
+                                    ),
+                                  ],
+                                );
+                              });
+                        },
+                      ),
+                      alignment: FractionalOffset(0.5, 1),
+                    )
+                  : Container(),
             ],
           ),
         ),

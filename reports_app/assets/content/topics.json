@@ -2,32 +2,24 @@
     "performance": {
         "title": "Performance",
         "description": "An app is considered to have poor performance if it responds slowly, shows choppy animations, freezes, crashes, or consumes a lot of power. To avoid these performance problems, use the profiling tools listed on this page to identify where your app is making inefficient use of resources, such as the CPU, memory, graphics, network, and device battery.",
-        "strategy": "Other errors refer to good practices, namely “This class (or a class which this class inherits from) is marked as '@immutable', but one or more of its instance fields are not final: DayTitle.date”.",
-        "results": "This refers to having mutable variables (read: just regular variables) in a StatelessWidget, which is inherently inmutable. In these cases, it’s better to mark the variables as inmutable with the “final” keyword. This doesn’t have real impact on the app execution."
+        "strategy": "The static profiling tool used was Dart Analyzer. It is available on Visual Code Studio, included in either Flutter’s or Dart’s plugin. Having used this profiler for the project, we found that it’s very useful in alerting errors and warnings opportunely.",
+        "image":"assets/images/performance/results.jpg"
     },
     "storage": {
         "title": "Storage & Data Handling",
-        "description": "An app is considered to have poor performance if it responds slowly, shows choppy animations, freezes, crashes, or consumes a lot of power. To avoid these performance problems, use the profiling tools listed on this page to identify where your app is making inefficient use of resources, such as the CPU, memory, graphics, network, and device battery.",
-        "strategy": "Other errors refer to good practices, namely “This class (or a class which this class inherits from) is marked as '@immutable', but one or more of its instance fields are not final: DayTitle.date”.",
-        "results": "This refers to having mutable variables (read: just regular variables) in a StatelessWidget, which is inherently inmutable. In these cases, it’s better to mark the variables as inmutable with the “final” keyword. This doesn’t have real impact on the app execution."
+        "strategy": "This section describes how data is stored in the device and presented to the user.\n\n- Use of SharedPreferences\n- Use of local storage\n- Use of remote storage\n- Cache & Data Fetching Strategies\n\nThis also covers a bit about how the app handles eventual connectivity, but that is further discussed in the “Connectivity” report. It also covers a bit about how the app actually saves images (or attempts to save them) but that is discussed in detail in the “Code” report."
     },
     "rendering": {
         "title": "Rendering and Animations",
-        "description": "An app is considered to have poor performance if it responds slowly, shows choppy animations, freezes, crashes, or consumes a lot of power. To avoid these performance problems, use the profiling tools listed on this page to identify where your app is making inefficient use of resources, such as the CPU, memory, graphics, network, and device battery.",
-        "strategy": "Other errors refer to good practices, namely “This class (or a class which this class inherits from) is marked as '@immutable', but one or more of its instance fields are not final: DayTitle.date”.",
-        "results": "This refers to having mutable variables (read: just regular variables) in a StatelessWidget, which is inherently inmutable. In these cases, it’s better to mark the variables as inmutable with the “final” keyword. This doesn’t have real impact on the app execution."
+        "strategy": "For the UI we did guerilla testing to find out what was working well and what wasn’t for both UIs. The questions were: \n\n- Do you like this app?\n- Particularly, do you like the colors chosen for this app?\n- Was it hard to find your way through the interface?\n\nWe also took note on other comments and reactions by the user, and we asked which of the two apps they liked more.\nFor rendering, we found when the interface wasn’t responding as it should have and attempted to find out why.\nFor animations, we analyzed the most interesting ones for each app."
     },
     "connectivity": {
-        "title": "Connectivity",
-        "description": "An app is considered to have poor performance if it responds slowly, shows choppy animations, freezes, crashes, or consumes a lot of power. To avoid these performance problems, use the profiling tools listed on this page to identify where your app is making inefficient use of resources, such as the CPU, memory, graphics, network, and device battery.",
-        "strategy": "Other errors refer to good practices, namely “This class (or a class which this class inherits from) is marked as '@immutable', but one or more of its instance fields are not final: DayTitle.date”.",
-        "results": "This refers to having mutable variables (read: just regular variables) in a StatelessWidget, which is inherently inmutable. In these cases, it’s better to mark the variables as inmutable with the “final” keyword. This doesn’t have real impact on the app execution."
+        "title": "Connectivity",        
+        "strategy": "In order to test this, we came up with scenarios, in order to reproduce them for all apps. Airplane mode was used to interrupt internet connection.\n\n1. Install the app, turn on airplane mode and open the app. Try to interact with it.\n2. Interact with the app, exit, turn on airplane mode and open the app. Try to interact with it.\n3. Interact with the app, but before using each feature, turn on airplane mode.\n4. Interact with the app, turning on airplane mode in the middle of executing each feature.\n\nWe will also cover the feedback that the user receives when there is no internet connection. Is it blocking? Is the error message unexpressive? Let’s find out!"        
     },
     "code": {
         "title": "Code structure",
-        "description": "An app is considered to have poor performance if it responds slowly, shows choppy animations, freezes, crashes, or consumes a lot of power. To avoid these performance problems, use the profiling tools listed on this page to identify where your app is making inefficient use of resources, such as the CPU, memory, graphics, network, and device battery.",
-        "strategy": "Other errors refer to good practices, namely “This class (or a class which this class inherits from) is marked as '@immutable', but one or more of its instance fields are not final: DayTitle.date”.",
-        "results": "This refers to having mutable variables (read: just regular variables) in a StatelessWidget, which is inherently inmutable. In these cases, it’s better to mark the variables as inmutable with the “final” keyword. This doesn’t have real impact on the app execution."
+        "strategy": "This section describes the most prominent design/architecture patterns implemented, and which libraries were used to achieve which features. Also, we take a closer look at Native code for both Android and iOS. 2T2000s does a very good job at implementing a pattern created and recommended by Google for Flutter, while SpaceX GO! is more orthodox and uses scoped models."
     }
 }
     

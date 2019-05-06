@@ -15,10 +15,34 @@
                         "subtitle": "Results"
                     },
                     {
-                        "text": "Static profiling detected 94 problems spread across 17 files. "
+                        "text": "Static profiling detected 94 problems spread across 17 files."
                     },
                     {
-                        "image": "assets/images/home/2T2000s.png"
+                        "image": "assets/images/performance/lint_2T2000S.jpg"
+                    },
+                    {
+                        "text": "Several of these are more about style: “Avoid using braces in interpolation when not needed.”, referring to using '0${n}' instead of just '0$n'"
+                    },
+                    {
+                        "image": "assets/images/performance/lint_2_2T2000S.jpg"
+                    },
+                    {
+                        "image": "assets/images/performance/lint_3_2T2000S.png"
+                    },
+                    {
+                        "text": "For example, explicitly declaring variables to null instead of letting Dart assume its null value:\n\n\t- ‘var a = null;’\n\ninstead of just\n\n\t- ’var a;’"
+                    },
+                    {
+                        "text": "Also, declaring the type of variables in a class constructor when Dart can assume its type"
+                    },
+                    {
+                        "text": "Other errors refer to good practices, namely “This class (or a class which this class inherits from) is marked as '@immutable', but one or more of its instance fields are not final: DayTitle.date”. This refers to having mutable variables (read: just regular variables without “final” or “const” keywords) in a StatelessWidget, which is inherently inmutable. In these cases, it’s better to mark the variables as inmutable with the “final” keyword. This doesn’t have real impact on the app execution."
+                    },
+                    {
+                        "text": "Another error refers to accessing a protected variable from another class, violating the @protected tag. This is due to using outdated libraries; a function that was once public is now protected and deprecated in favor of another. Similarly, two classes that were implemented."
+                    },
+                    {
+                        "text": "Other warnings do impact performance, or at the very least allocated memory. For example, unused variables, unused imports, unused libraries and unused classes. Also relating to imports, we found double imports in one file."
                     }
                 ]
             },
@@ -32,7 +56,7 @@
                         "text": "This app has no actual multithreading, i.e., no isolates were used, and thus all the developed code runs in a single thread.\nOn the other hand, asynchronous calls are handled with simple placeholders, like using CircularProgressIndicators when there is no data available."
                     },
                     {
-                        "image": "assets/images/home/2T2000s.png"
+                        "image": "assets/images/performance/multithreading_2T2000S.jpg"
                     }
                 ]
             },
@@ -263,7 +287,97 @@
     },
     "storage": {
         "title": "Storage & Data Handling",
-        "content1": [],
+        "content1": [
+            {
+                "title": "Shared Preferences",
+                "content": [
+                    {
+                        "text": "The only use of Shared Preferences is done by the cache manager. This is how the implementation of the Flutter Firebase Cache plugin works, but it will be included here since the library was implemented anew."
+                    },
+                    {
+                        "text": "Everytime a cached file, in this case only photos and filters, is requested, the cache is updated in the CacheManager instance and also in Shared Preferences, in the form of a Json string."
+                    },
+                    {
+                        "text": "Separately, the timestamp of the last update to the cache is also saved in Shared Preferences as an int (milliseconds since epoch)."
+                    }
+                ]
+            },
+            {
+                "title": "Storage management",
+                "content": [
+                    {
+                        "subtitle": "Local - Private"
+                    },
+                    {
+                        "text": "This refers to storing data in SQLite. This app does not use this storage strategy."
+                    },
+                    {
+                        "subtitle": "External - Public"
+                    },
+                    {
+                        "text": "This refers to data stored inside the phone in an external folder, like the sd card.\nIn this case, data pictures taken by the user aren’t saved by default to the sd card, but the user can save his or any other picture after it has been successfully posted."
+                    },
+                    {
+                        "text": "Opening an available picture yields the screen below (attention to the upper right corner)."
+                    },
+                    {
+                        "image": "assets/images/storage/storage_1_2T2000S.png"
+                    },
+                    {
+                        "text": "After hitting the save button on the upper right, a checked mark appears."
+                    },
+                    {
+                        "image": "assets/images/storage/storage_2_2T2000S.png"
+                    },
+                    {
+                        "text": "This, however, doesn’t actually save the image. If the user closes the Photo and opens it again, the save button appears again, as there is no logic behind showing or hiding the disquette icon in favour of a checked mark icon."
+                    },
+                    {
+                        "subtitle": "Take a look at what this is doing to save the image:"
+                    },
+                    {
+                        "image": "assets/images/storage/storage_3_2T2000S.png"
+                    },
+                    {
+                        "text": "More on this method channel on the “code” report, since it has more to do with the way native code was implemented.\n\nLastly, external storage is also accessed when uploading a picture from the phone."
+                    }
+                ]
+            },
+            {
+                "title": "Remote Storage",
+                "content": [
+                    {
+                        "text": "Storage is largely managed with Firebase Storage, namely the schedule information, pictures and camera filters. Also, the app offers chatrooms, which are managed with Firebase Messaging."
+                    }
+                ]
+            },
+            {
+                "title": "Cache & Data Fetching",
+                "content": [
+                    {
+                        "text": "Cache is used to keep images in the app. Already loaded pictures are kept in the app for the user to see when they open the app. This avoids the need to fetch multimedia files from the server, and it’s a permanent cache."
+                    },
+                    {
+                        "text": "Cache is also used to keep camera filters readily available too. When a filter is loaded, it is cached. It’s also a permanent cache."
+                    },
+                    {
+                        "text": "To achieve this, the library flutter_cache_manager is used, and two files are implemented:\n- cached_firebase_image.dart\n- flutter_firebase_cache_manager\n\nIt’s unclear why these libraries are implemented by the developer."
+                    },
+                    {
+                        "text": "The fetching strategy used is pull-based. Only when the user asks for cached data is it downloaded and kept within the app. When the user first tries to load a filter a spinner is shown, and on airplane mode, a spinner is shown forever."
+                    },
+                    {
+                        "image": "assets/images/performance/noLoadedFilters(1).gif"
+                    },
+                    {
+                        "text": "When the user has interacted with a filter it will show, but new ones won’t load still."
+                    },
+                    {
+                        "image": "assets/images/performance/loadedFilters(1).gif"
+                    }
+                ]
+            }
+        ],
         "content2": [],
         "color": "0xFF1B4079"
     },
