@@ -31,17 +31,17 @@ class _ReportsViewState extends State<ReportsView> {
   Widget build(BuildContext context) {
     print(widget._data);
     return DefaultTabController(
-      length: 3,
+      length: 2,
       child: Scaffold(
         bottomNavigationBar: TabBar(
           tabs: [
             Tab(
-              icon: Icon(Icons.directions_car),
-              text: "App 1",
+              icon: Icon(Icons.school),
+              text: "2T2000S",
             ),
             Tab(
-              icon: Icon(Icons.directions_transit),
-              text: "App 2",
+              icon: Icon(Icons.star),
+              text: "SpaceX-Go",
             )
           ],
         ),
@@ -68,7 +68,7 @@ class _ReportsViewState extends State<ReportsView> {
                       end: Alignment.bottomRight,
                       colors: [
                     Colors.white,
-                    Color(widget._data['color'].hashCode)
+                    Color(int.parse(widget._data['color']))
                   ])),
               child: _buildPageView(context, 2),
             ),
