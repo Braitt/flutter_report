@@ -26,7 +26,7 @@
                 "title": "Multithreading",
                 "content": [
                     {
-                        "subtitle":"Threading in this app"
+                        "subtitle": "Threading in this app"
                     },
                     {
                         "text": "This app has no actual multithreading, i.e., no isolates were used, and thus all the developed code runs in a single thread.\nOn the other hand, asynchronous calls are handled with simple placeholders, like using CircularProgressIndicators when there is no data available."
@@ -202,63 +202,159 @@
                     {
                         "text": "All of the interviewed people liked this app, mostly because of the animations."
                     },
-                    {"subtitle": "Particularly, do you like the colors chosen for this app?"},
-                    {"text": "Only three of interviewed people didn’t like the colors, particularly on the ‘Info’ view, saying it was rather hard on the eyes. One said it was too ‘Instagram-ish’, which is true."},
-                    {"image": "assets/images/rendering/info1.jpeg"},
-                    {"subtitle": "Was it hard to find your way through the interface?"},
-                    {"text": "People generally found their way through the app without issues, however, it took them a couple seconds to find out that on the schedule view, each card contained buttons, and each element in the bottom sheet led to another window."},
-                    {"image": "assets/images/rendering/ui1.jpeg"},
-                    {"image": "assets/images/rendering/ui2.jpeg"},
-                    {"image": "assets/images/rendering/ui3.jpeg"},
-                    {"subtitle": "Further comments"},
-                    {"text": "A couple people commented on how fun it was to take pictures and see them displayed after a couple seconds on the app."},
-                    {"text": "One person commented on the camera button, saying it was ugly. Can’t say we disagree on that one."},
-                    {"image": "assets/images/rendering/camera1.jpeg"},
-                    {"text": "People generally liked how the app was always fluid."},
-                    {"text": "One person commented that it would be cool to do a similar app as a roadmap for the induction days in Los Andes."}
+                    {
+                        "subtitle": "Particularly, do you like the colors chosen for this app?"
+                    },
+                    {
+                        "text": "Only three of interviewed people didn’t like the colors, particularly on the ‘Info’ view, saying it was rather hard on the eyes. One said it was too ‘Instagram-ish’, which is true."
+                    },
+                    {
+                        "image": "assets/images/rendering/info1.jpeg"
+                    },
+                    {
+                        "subtitle": "Was it hard to find your way through the interface?"
+                    },
+                    {
+                        "text": "People generally found their way through the app without issues, however, it took them a couple seconds to find out that on the schedule view, each card contained buttons, and each element in the bottom sheet led to another window."
+                    },
+                    {
+                        "image": "assets/images/rendering/ui1.jpeg"
+                    },
+                    {
+                        "image": "assets/images/rendering/ui2.jpeg"
+                    },
+                    {
+                        "image": "assets/images/rendering/ui3.jpeg"
+                    },
+                    {
+                        "subtitle": "Further comments"
+                    },
+                    {
+                        "text": "A couple people commented on how fun it was to take pictures and see them displayed after a couple seconds on the app."
+                    },
+                    {
+                        "text": "One person commented on the camera button, saying it was ugly. Can’t say we disagree on that one."
+                    },
+                    {
+                        "image": "assets/images/rendering/camera1.jpeg"
+                    },
+                    {
+                        "text": "People generally liked how the app was always fluid."
+                    },
+                    {
+                        "text": "One person commented that it would be cool to do a similar app as a roadmap for the induction days in Los Andes."
+                    }
                 ]
             },
-            {"title": "Accessibility",
-            "content": [
-                {"text": "We ran Google’s Accessibility Scanner and found the following suggestions."},
-                {"subtitle": "We ran Google’s Accessibility Scanner and found the following suggestions."},
-                {"text": "Accessibility Scanner suggests an item label for all clickable items. In 2T2000s, several Widgets have no label, like the social media buttons in the Info tab."},
-                {"subtitle": "Color contrast"},
-                {"text": "Color contrast was an issue in two screens."},
-                {"subtitle": "Button size"},
-                {"text": "Button size was a warning on two screens."}
-            ]},
-            {"title": "Rendering",
-            "content": [{"text": "This section is rather short since we couldn’t profile the use of the GPU from within the app, however, there is one situation when the interface yanks."},
-                {"text": "It occurs when the user drags from the first card to the second, on the schedule view."},
-                {"image": "/assets/images/rendering/rendering11.gif"},
-                {"text": "This can be fixed by switching to another physics handler. Currently, the app uses ScrollPhysics, a simple rename to AlwaysScrollableScrollPhysics would fix the issue. This scroll physics handler has no ‘deactivated’ timeframe when the user is unable to drag."}
-                ]},
-            {"title": "What is animated?",
-            "content": [{"text": "Several parts of the app use custom animations, and great part of the code is dedicated to animating the app. The most prominent and obvious custom animation is the one found on the home screen."}
-            ]},
-            {"title": "Home Screen Animation",
-            "content": [
-                {"image": "/assets/images/rendering/animation1.gif"},
-                {"text": "On the ‘Code’ report, the BLoC pattern used is described in more detail 1 2. However, one of the two blocs used is only to manage scroll information. The bloc is used to define a feed of the scroll state in the form of a few controllers, sinks (data flows to the bloc) and streams (data flows to the widget)."},
-                {"image": "/assets/images/rendering/scrollbloc.png"},
-                {"text": "The state of the scroll is transformed eventually into a change in color and shape, which is what happens in the schedule view. To achieve this, several steps are made."},
-                {"text": "First, an AnimatedBackground class is defined. This receives a ‘t’ parameter, indicating the progress of the animation."},
-                {"text": "Second, the elements are defined. This includes an array of the background colors and the shapes, square, lines and triangles. In the example, two screens are shown, one with orange background with blue squares on top, and one with green background with six pink ‘lines’ on top."},
-                {"text": "Third, different functions are defined. They take the parameter ‘t’ and apply a transformation on the background color and the foreground shapes. There are four different functions, each defining how a screen will be animated. In this example, two of these functions are fired, interpolating between the two background colors, scaling and rotating from the middle of the screen and outwards."},
-                {"text": "Lastly, this animation implements its own Scrolling Physics, defined in ‘class MyScrollPhysics extends ScrollPhysics’. This overrides several methods, but the most interesting of them is the ‘carriedMomentum’ method. Defining a new formula for the momentum is what makes it possible to see this bouncy animation."},
-                {"image": "/assets/images/rendering/animation31.gif"},
-                {"text": "All in all, this is very complex in its implementation and the fact that it’s all implemented in a single file with over 10 different classes makes it extremely hard to understand. This animation alone is comprised of over 800 lines of codes. It’s also something unlike anything we’ve seen on an App."}
-            ]},
-            {"title": "Bottom Navigation Bar Animation",
-            "content": [
-                {"text": "This animation is more modest than the one in the home screen."},
-                {"image": "/assets/images/rendering/animation2.gif"},
-                {"text": "It’s built with an AnimationController set on a duration of 300 milliseconds. An Animation is built using CurvedAnimation on a fastOutSlowIn fashion."},
-                {"image": "/assets/images/rendering/apppage.png"},
-                {"text": "This animation is used on a FadeTransition that wraps each element in the BottomNavigationBar."},
-                {"image": "/assets/images/rendering/fadetransition.png"}
-            ]}
+            {
+                "title": "Accessibility",
+                "content": [
+                    {
+                        "text": "We ran Google’s Accessibility Scanner and found the following suggestions."
+                    },
+                    {
+                        "subtitle": "We ran Google’s Accessibility Scanner and found the following suggestions."
+                    },
+                    {
+                        "text": "Accessibility Scanner suggests an item label for all clickable items. In 2T2000s, several Widgets have no label, like the social media buttons in the Info tab."
+                    },
+                    {
+                        "subtitle": "Color contrast"
+                    },
+                    {
+                        "text": "Color contrast was an issue in two screens."
+                    },
+                    {
+                        "subtitle": "Button size"
+                    },
+                    {
+                        "text": "Button size was a warning on two screens."
+                    }
+                ]
+            },
+            {
+                "title": "Rendering",
+                "content": [
+                    {
+                        "text": "This section is rather short since we couldn’t profile the use of the GPU from within the app, however, there is one situation when the interface yanks."
+                    },
+                    {
+                        "text": "It occurs when the user drags from the first card to the second, on the schedule view."
+                    },
+                    {
+                        "image": "/assets/images/rendering/rendering11.gif"
+                    },
+                    {
+                        "text": "This can be fixed by switching to another physics handler. Currently, the app uses ScrollPhysics, a simple rename to AlwaysScrollableScrollPhysics would fix the issue. This scroll physics handler has no ‘deactivated’ timeframe when the user is unable to drag."
+                    }
+                ]
+            },
+            {
+                "title": "What is animated?",
+                "content": [
+                    {
+                        "text": "Several parts of the app use custom animations, and great part of the code is dedicated to animating the app. The most prominent and obvious custom animation is the one found on the home screen."
+                    }
+                ]
+            },
+            {
+                "title": "Home Screen Animation",
+                "content": [
+                    {
+                        "image": "/assets/images/rendering/animation1.gif"
+                    },
+                    {
+                        "text": "On the ‘Code’ report, the BLoC pattern used is described in more detail 1 2. However, one of the two blocs used is only to manage scroll information. The bloc is used to define a feed of the scroll state in the form of a few controllers, sinks (data flows to the bloc) and streams (data flows to the widget)."
+                    },
+                    {
+                        "image": "/assets/images/rendering/scrollbloc.png"
+                    },
+                    {
+                        "text": "The state of the scroll is transformed eventually into a change in color and shape, which is what happens in the schedule view. To achieve this, several steps are made."
+                    },
+                    {
+                        "text": "First, an AnimatedBackground class is defined. This receives a ‘t’ parameter, indicating the progress of the animation."
+                    },
+                    {
+                        "text": "Second, the elements are defined. This includes an array of the background colors and the shapes, square, lines and triangles. In the example, two screens are shown, one with orange background with blue squares on top, and one with green background with six pink ‘lines’ on top."
+                    },
+                    {
+                        "text": "Third, different functions are defined. They take the parameter ‘t’ and apply a transformation on the background color and the foreground shapes. There are four different functions, each defining how a screen will be animated. In this example, two of these functions are fired, interpolating between the two background colors, scaling and rotating from the middle of the screen and outwards."
+                    },
+                    {
+                        "text": "Lastly, this animation implements its own Scrolling Physics, defined in ‘class MyScrollPhysics extends ScrollPhysics’. This overrides several methods, but the most interesting of them is the ‘carriedMomentum’ method. Defining a new formula for the momentum is what makes it possible to see this bouncy animation."
+                    },
+                    {
+                        "image": "/assets/images/rendering/animation31.gif"
+                    },
+                    {
+                        "text": "All in all, this is very complex in its implementation and the fact that it’s all implemented in a single file with over 10 different classes makes it extremely hard to understand. This animation alone is comprised of over 800 lines of codes. It’s also something unlike anything we’ve seen on an App."
+                    }
+                ]
+            },
+            {
+                "title": "Bottom Navigation Bar Animation",
+                "content": [
+                    {
+                        "text": "This animation is more modest than the one in the home screen."
+                    },
+                    {
+                        "image": "/assets/images/rendering/animation2.gif"
+                    },
+                    {
+                        "text": "It’s built with an AnimationController set on a duration of 300 milliseconds. An Animation is built using CurvedAnimation on a fastOutSlowIn fashion."
+                    },
+                    {
+                        "image": "/assets/images/rendering/apppage.png"
+                    },
+                    {
+                        "text": "This animation is used on a FadeTransition that wraps each element in the BottomNavigationBar."
+                    },
+                    {
+                        "image": "/assets/images/rendering/fadetransition.png"
+                    }
+                ]
+            }
         ],
         "content2": [],
         "color": "0xFFDA2C38"
