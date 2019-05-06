@@ -282,7 +282,7 @@
                         "text": "It occurs when the user drags from the first card to the second, on the schedule view."
                     },
                     {
-                        "image": "/assets/images/rendering/rendering11.gif"
+                        "image": "assets/images/rendering/rendering11.gif"
                     },
                     {
                         "text": "This can be fixed by switching to another physics handler. Currently, the app uses ScrollPhysics, a simple rename to AlwaysScrollableScrollPhysics would fix the issue. This scroll physics handler has no ‘deactivated’ timeframe when the user is unable to drag."
@@ -301,13 +301,13 @@
                 "title": "Home Screen Animation",
                 "content": [
                     {
-                        "image": "/assets/images/rendering/animation1.gif"
+                        "image": "assets/images/rendering/animation1.gif"
                     },
                     {
                         "text": "On the ‘Code’ report, the BLoC pattern used is described in more detail 1 2. However, one of the two blocs used is only to manage scroll information. The bloc is used to define a feed of the scroll state in the form of a few controllers, sinks (data flows to the bloc) and streams (data flows to the widget)."
                     },
                     {
-                        "image": "/assets/images/rendering/scrollbloc.png"
+                        "image": "assets/images/rendering/scrollbloc.png"
                     },
                     {
                         "text": "The state of the scroll is transformed eventually into a change in color and shape, which is what happens in the schedule view. To achieve this, several steps are made."
@@ -325,7 +325,7 @@
                         "text": "Lastly, this animation implements its own Scrolling Physics, defined in ‘class MyScrollPhysics extends ScrollPhysics’. This overrides several methods, but the most interesting of them is the ‘carriedMomentum’ method. Defining a new formula for the momentum is what makes it possible to see this bouncy animation."
                     },
                     {
-                        "image": "/assets/images/rendering/animation31.gif"
+                        "image": "assets/images/rendering/animation31.gif"
                     },
                     {
                         "text": "All in all, this is very complex in its implementation and the fact that it’s all implemented in a single file with over 10 different classes makes it extremely hard to understand. This animation alone is comprised of over 800 lines of codes. It’s also something unlike anything we’ve seen on an App."
@@ -339,19 +339,19 @@
                         "text": "This animation is more modest than the one in the home screen."
                     },
                     {
-                        "image": "/assets/images/rendering/animation2.gif"
+                        "image": "assets/images/rendering/animation2.gif"
                     },
                     {
                         "text": "It’s built with an AnimationController set on a duration of 300 milliseconds. An Animation is built using CurvedAnimation on a fastOutSlowIn fashion."
                     },
                     {
-                        "image": "/assets/images/rendering/apppage.png"
+                        "image": "assets/images/rendering/apppage.png"
                     },
                     {
                         "text": "This animation is used on a FadeTransition that wraps each element in the BottomNavigationBar."
                     },
                     {
-                        "image": "/assets/images/rendering/fadetransition.png"
+                        "image": "assets/images/rendering/fadetransition.png"
                     }
                 ]
             }
