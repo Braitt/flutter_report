@@ -55,13 +55,13 @@
                         "subtitle": "Initial state"
                     },
                     {
-                        "text": "Some screenshots"
+                        "image": "assets/images/performance/memory_usage_initial.jpg"
                     },
                     {
                         "subtitle": "Final state"
                     },
                     {
-                        "text": "hola"
+                        "image": "assets/images/performance/memory_usage_2T2000S.jpg"
                     }
                 ]
             },
@@ -84,13 +84,13 @@
                         "subtitle": "Initial state"
                     },
                     {
-                        "text": "Some screenshots"
+                        "image": "assets/images/performance/cpu_usage_initial.jpg"
                     },
                     {
                         "subtitle": "Final state"
                     },
                     {
-                        "text": "hola"
+                        "image": "assets/images/performance/cpu_usage_2T2000S.jpg"
                     }
                 ]
             },
@@ -98,10 +98,16 @@
                 "title": "Battery",
                 "content": [
                     {
-                        "text": "SpaceX GO!\nThis app works as a tracking for SpaceX past and upcoming launch dates and news, as well as information about the vessels and the company."
+                        "subtitle": "Tests"
                     },
                     {
-                        "text": "Technical info"
+                        "text": "The test was to use the application for 15 minutes and observing the energy expenditure in the device (same device as CPU and memory section). The battery usage information was provided by operating system native features that measured spended energy by app."
+                    },
+                    {
+                        "subtitle": "Energy consumption"
+                    },
+                    {
+                        "image": "assets/images/performance/battery_usage_2T2000S.jpg"
                     }
                 ]
             }
