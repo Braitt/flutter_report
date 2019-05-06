@@ -66,7 +66,19 @@ flutter:
     - assets/images/performance/cpu_usage_2T2000S.jpg 
     - assets/images/home/SpaceX_1.jpg
     - assets/images/home/SpaceX_2.jpg
-    - assets/images/home/SpaceX_icon.png    
+    - assets/images/home/SpaceX_icon.png
+    - assets/images/rendering/ui1.jpeg
+    - assets/images/rendering/ui2.jpeg
+    - assets/images/rendering/ui3.jpeg
+    - assets/images/rendering/animation1.gif
+    - assets/images/rendering/animation2.gif
+    - assets/images/rendering/animation31.gif
+    - assets/images/rendering/rendering11.gif
+    - assets/images/rendering/scrollbloc.png
+    - assets/images/rendering/info1.png
+    - assets/images/rendering/apppage.png
+    - assets/images/rendering/fadetransition.png
+    - assets/images/rendering/camera1.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
