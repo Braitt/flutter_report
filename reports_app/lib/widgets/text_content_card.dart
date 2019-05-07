@@ -108,7 +108,9 @@ class ContentCard extends StatelessWidget {
                     ),
               refs != null
                   ? Align(
+                      alignment: FractionalOffset(0.5, 1),
                       child: IconButton(
+                        alignment: Alignment.bottomCenter,
                         icon: Icon(Icons.more_horiz),
                         onPressed: () {
                           showModalBottomSheet<void>(
@@ -133,7 +135,6 @@ class ContentCard extends StatelessWidget {
                               });
                         },
                       ),
-                      alignment: FractionalOffset(0.5, 1),
                     )
                   : Container(),
             ],
