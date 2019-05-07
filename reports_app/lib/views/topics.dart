@@ -45,7 +45,7 @@ class TopicsView extends StatelessWidget {
                     Tab(
                       child: Center(
                           child: Icon(
-                        Icons.storage,
+                        Icons.sd_storage,
                         size: sizeForIcons,
                         color: colorForIcons,
                       )),
@@ -61,7 +61,7 @@ class TopicsView extends StatelessWidget {
                     Tab(
                       child: Center(
                           child: Icon(
-                        Icons.signal_cellular_4_bar,
+                        Icons.wifi,
                         size: sizeForIcons,
                         color: colorForIcons,
                       )),
@@ -69,7 +69,7 @@ class TopicsView extends StatelessWidget {
                     Tab(
                       child: Center(
                           child: Icon(
-                        Icons.edit,
+                        Icons.code,
                         size: sizeForIcons,
                         color: colorForIcons,
                       )),
