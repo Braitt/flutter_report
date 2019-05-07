@@ -26,6 +26,9 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
 
+  # Our dependencies
+  flutter_web_browser: ^0.11.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -44,14 +47,27 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
+
+    # Jsons
     - assets/content/home.json
     - assets/content/topics.json
     - assets/content/reports.json
+
+    # Home images
     - assets/images/home/2T2000s_icon.PNG
+    - assets/images/home/2T2000s-playstore.jpeg
     - assets/images/home/2T2000s.png
     - assets/images/home/2T2000s2.png
-    - assets/images/home/fotoRogelio.png
+    - assets/images/home/animation1.gif
     - assets/images/home/fotoNico.jpg
+    - assets/images/home/fotoRogelio.png
+    - assets/images/home/SpaceX_1.jpg
+    - assets/images/home/SpaceX_2.jpg
+    - assets/images/home/SpaceX_icon.png
+    - assets/images/home/spacex-playstore.jpeg
+    - assets/images/home/version1.jpg
+
+    # Performance images
     - assets/images/performance/noLoadedFilters.gif
     - assets/images/performance/noLoadedFilters(1).gif
     - assets/images/performance/loadedFilters.gif
@@ -69,12 +85,13 @@ flutter:
     - assets/images/performance/lint_2T2000S.jpg
     - assets/images/performance/multithreading_2T2000S.jpg
     - assets/images/performance/results.jpg
+
+    # Storage images
     - assets/images/storage/storage_1_2T2000S.png
     - assets/images/storage/storage_2_2T2000S.png
     - assets/images/storage/storage_3_2T2000S.png
-    - assets/images/home/SpaceX_1.jpg
-    - assets/images/home/SpaceX_2.jpg
-    - assets/images/home/SpaceX_icon.png
+
+    # Rendering images
     - assets/images/rendering/ui1.jpeg
     - assets/images/rendering/ui2.jpeg
     - assets/images/rendering/ui3.jpeg

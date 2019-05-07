@@ -1,24 +1,34 @@
 import 'package:flutter/material.dart';
-
-import '../views/topics.dart';
+import 'package:flutter_web_browser/flutter_web_browser.dart';
 
 class ContentCard extends StatelessWidget {
   final String text;
   final String image;
   final String circularImage;
   final String subtitle;
-  final String refs;
+  final List<Map<String, String>> refs;
 
   ContentCard(
       {this.text, this.image, this.circularImage, this.subtitle, this.refs});
 
   factory ContentCard.fromJson(Map<String, dynamic> parsedJson) {
+    List<Map<String, String>> builtRefs;
+    if (parsedJson['refs'] != null) {
+      String refString = parsedJson['refs'];
+      List<String> refStrings = refString.split(",");
+      builtRefs = [];
+      refStrings.forEach((ref) {
+        List<String> currentRef = ref.split("::");
+        builtRefs.add({"name": currentRef[0], "link": currentRef[1]});
+      });
+    }
+    print(builtRefs);
     return ContentCard(
       text: parsedJson['text'],
       image: parsedJson['image'],
       circularImage: parsedJson['circularImage'],
       subtitle: parsedJson['subtitle'],
-      refs: parsedJson['refs'],
+      refs: builtRefs,
     );
   }
 
@@ -104,25 +114,21 @@ class ContentCard extends StatelessWidget {
                           showModalBottomSheet<void>(
                               context: context,
                               builder: (BuildContext context) {
-                                return new Column(
+                                return Column(
                                   mainAxisSize: MainAxisSize.min,
-                                  children: <Widget>[
-                                    new ListTile(
-                                      leading: new Icon(Icons.music_note),
-                                      title: new Text('Music'),
-                                      onTap: () {},
-                                    ),
-                                    new ListTile(
-                                      leading: new Icon(Icons.photo_album),
-                                      title: new Text('Photos'),
-                                      onTap: () {},
-                                    ),
-                                    new ListTile(
-                                      leading: new Icon(Icons.videocam),
-                                      title: new Text('Video'),
-                                      onTap: () {},
-                                    ),
-                                  ],
+                                  children: refs.map((ref) {
+                                    return ListTile(
+                                        title: Text(ref['name']),
+                                        onTap: () async {
+                                          print('oie entranding');
+                                          return await FlutterWebBrowser
+                                              .openWebPage(
+                                            url: ref['link'],
+                                            androidToolbarColor:
+                                                Theme.of(context).primaryColor,
+                                          );
+                                        });
+                                  }).toList(),
                                 );
                               });
                         },

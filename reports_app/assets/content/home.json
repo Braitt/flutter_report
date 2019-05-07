@@ -3,21 +3,29 @@
 		"title": "Intro",
 		"content": [
 			{
-				"text": "We are Rogelio García and Nicolás Hernández.\n\nWelcome to our report!\n\nTo browse this board-like view, swipe down to read each ‘thread’ and swipe right to see another ‘thread’."
+				"text": "We are Rogelio García and Nicolás Hernández.\n\nWelcome to our report!\n\nTo browse this padlet-like report, swipe down to read each topic and swipe right to see another one. Tap on the button on the bottom right of the screen to see the rest of the report.\n\nIf a card has three dots underneath, like this one, tap on them to see references or further information!",
+				"refs": "Repository::https://github.com/Braitt/flutter_report"
 			},
 			{
 				"image": "assets/images/home/fotoRogelio.png"
 			},
 			{
 				"image": "assets/images/home/fotoNico.jpg"
-			}			
+			}
 		]
 	},
 	{
 		"title": "Apps chosen",
 		"content": [
 			{
-				"text": "As flutter is a pretty new thing, finding an app that has over a million downloads on the Play Store is not easy, in fact, only only found Alibaba with 50 million downloads. The second biggest app would be Reflectly with 100.000. Moreover, finding an app that is open-source is even harder. We chose three open-source apps and will be doing different analysis on them: 2T2000s, SpaceX GO! And Platypus Crypto."
+				"text": "As flutter is a pretty new thing, finding an app that has over a million downloads on the Play Store is not easy, in fact, only only found Alibaba with 50 million downloads. The second biggest app would be Reflectly with 100.000. Moreover, finding an app that is open-source is even harder."
+			},
+			{
+				"text": "Given that we couldn’t find an app that met these criteria, we chose two open-source apps and will be doing different analysis on them: 2T2000s and SpaceX GO!."
+			},
+			{
+				"text": "Being limited in both a big open-source development ecosystem like, for example, Firefox’s, and number of features, these apps are still good examples for certain things that will be covered in the analysis; despite being small, they implement design patterns, animations and other interesting things that will be covered in this report. They also appear featured in Flutter’s official website and on Medium.com.",
+				"refs": "Flutter showcase::https://flutter.dev/showcase,Medium showcase::https://medium.com/aviabird/top-10-open-source-flutter-apps-997afff4f1b8"
 			}
 		]
 	},
@@ -29,6 +37,9 @@
 				"circularImage": "assets/images/home/2T2000s_icon.PNG"
 			},
 			{
+				"subtitle": "Info"
+			},
+			{
 				"text": "Finding technical details about this app is not possible. On Github, there are 7 commits.\n\n6 commits were done the 30th of September 2018, including an initial default commit (when the repository was created), four commits each updating the README.md file with new images and one commit containing the whole app.\n\nThe other commit was done the 11th of October; it updates the license."
 			},
 			{
@@ -38,7 +49,19 @@
 				"text": "The project was done over 3 months by a single person, Matthew Tory, and has since then been displayed on Flutter's webpage."
 			},
 			{
-				"text": "Some screenshots"
+				"image": "assets/images/home/2T2000s-playstore"
+			},
+			{
+				"text": "This app has only 5 reviews and has been downloaded over 500 times. The average rating is 4.5, with only 1 rating being 3 stars."
+			},
+			{
+				"subtitle": "Features"
+			},
+			{
+				"text": "2T2000S app provides the following features:\n\n\t-\tReview daily scheduling and activities.\n\n\t-\tReview day activities detail on timeline.\n\n\t-\tReview activity information (location, time, map, description).\n\n\t-\tLook for activities using a map.\n\n\t-\tRetrieve photos from other students.\n\n\t-\tAdd new photos with description and overlays.\n\n\t-\tSave locally photos and delete them.\n\n\t-\tReview more information about app like resources, questions and contacts."
+			},
+			{
+				"subtitle": "Some screenshots"
 			},
 			{
 				"image": "assets/images/home/2T2000s.png"
@@ -52,17 +75,99 @@
 		"title": "SpaceX GO!",
 		"content": [
 			{
-				"text": "This app works as a tracking for SpaceX past and upcoming launch dates and news, as well as information about the vessels and the company.",
+				"text": "This app works as a tracking for SpaceX past and upcoming launch dates and news, as well as information about the vessels and the company. It’s an open source app that was actually built for fun and for educational purposes, but has since then become a referent for Flutter development, and has gained modest traction in terms of activity on Github.",
 				"circularImage": "assets/images/home/SpaceX_icon.png"
 			},
 			{
-				"subtitle": "Technical info"
+				"subtitle": "Info"
+			},
+			{
+				"text": "On github, SpaceX GO! Has over 400 commits, several pending issues, with a new issue being posted every couple weeks. It has about 3000 lines of code written and 80 classes, about half of them Widgets."
+			},
+			{
+				"image": "assets/images/home/spacex-playstore"
+			},
+			{
+				"text": "This app has received only 76 reviews total and over 1000 downloads and an average rating of 4.7. No ratings under 5 stars have a written review, so it’s difficult to determine what caused these users to rate it with four, two or one star."
+			},
+			{
+				"text": "This app is available in both the app store and the play store, but we will only focus on the Android version of the app."
+			},
+			{
+				"subtitle": "Features"
+			},
+			{
+				"text": "SpaceX-Go app provides the following features:\n\n\t-\tReview last launches.\n\n\t-\tSearch for a launch by name.\n\n\t-\tList vehicles used by launches.\n\n\t-\tKnow more about company (SpaceX).\n\n\t-\tAdd launches to calendar.\n\n\t-\tReview details of launches (Rocket, Payload and Vehicle)."
+			},
+			{
+				"subtitle": "Some screenshots"
 			},
 			{
 				"image": "assets/images/home/SpaceX_1.jpg"
 			},
 			{
 				"image": "assets/images/home/SpaceX_2.jpg"
+			}
+		]
+	},
+	{
+		"title": "Analysis chosen",
+		"content": [
+			{
+				"text": "We wrote different reports based on most of the topics covered on the course. The complete list is:\n\n\t-\tPerformance, including profiling, multithreading and battery, memory and CPU management\n\n\t-\tStorage and data handling\n\n\t-\tRendering, UI and animations, including accessibility\n\n\t-\tEventual Connectivity\n\n\t-\tCode analysis: libraries and patterns used, native code implemented and platform specific code, good and bad programming practices. This report resembles a code review."
+			},
+			{
+				"text": "Doing dynamic performance profiling on 2T200s wasn’t possible since the app can’t be run. With the code at hand, however, we could do static profiling and more in-depth code analysis."
+			}
+		]
+	},
+	{
+		"title": "What we learnt",
+		"content": [
+			{
+				"subtitle": "StreamBuilders"
+			},
+			{
+				"text": "We found out way simpler ways of managing data when using a backend, namely Firebase and subscriptions to data documents and collections. In our project we implemented MVVM using Scoped Models and RxDart, which were accessed by the widgets to fetch, add or remove data. Ultimately, however, we are mainly displaying data."
+			},
+			{
+				"text": "To display data, 2T2000s uses StreamBuilders, which ‘attach’ to a subscription and show data automatically. This is better done with the BLoC pattern, described in detail in the “code” report."
+			},
+			{
+				"subtitle": "Programming experience"
+			},
+			{
+				"text": "Static profiling using Dart Analyzer, built into Visual Studio Code is extremely good. Flutter’s error messages aren’t very informative for the developer when compared to Java’s for example, but the help that the Flutter and Dart plugins provide when developing make up for this."
+			},
+			{
+				"text": "On the other hand, the ecosystem in pages like StackOverflow isn’t nearly as huge as for other languages like Python, but the community is very active and in only a couple months since Flutter’s first stable release, it has already garnered a healthy amount of online resources, most of them in Medium.com."
+			},
+			{
+				"text": "Another lesson was the use of factories. In our project we used a great deal of factory methods (though we never implemented one), and for this report we actually had a case where the default constructor wasn’t enough and that’s where factories come in."
+			}
+		]
+	},
+	{
+		"title": "What we used in this app",
+		"content": [
+			{
+				"text": "For this app we started by making use of PageView widgets, like the ones used in 2T2000s, and we ended up having several PageViews in one PageView to achieve a map-like style."
+			},
+			{
+				"image": "assets/images/home/version1.jpg"
+			},
+			{
+				"text": "We then decided this was too rigid since it didn’t wrap around content, so we used Slivers in a similar fashion as 2T2000s does to achieve the final padlet-like style. We then made use of other widgets we already knew to build the rest of the app, including the background gradient."
+			},
+			{
+				"text": "Finally we added this little animation and gradient we’re quite proud of. It also avoids the cutting shown on the screenshot earlier."
+			},
+			{
+				"image": "assets/images/home/animation1.gif"
+			},
+			{
+				"text": "You can find the source code of this app in our repository!",
+				"refs": "Repository::https://github.com/Braitt/flutter_report"
 			}
 		]
 	}
