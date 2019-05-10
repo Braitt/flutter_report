@@ -594,7 +594,7 @@
                 ]
             },
             {
-                "title": "Platform Spicific Code",
+                "title": "Platform Specific Code",
                 "content": [
                     {
                         "text": "The app runs platform specific code on one situation only. On either the map view or the event view, when the user taps on the map, the link opened is different for each platform. iOS directs to maps.apple.com and Android directs to Google Maps."
