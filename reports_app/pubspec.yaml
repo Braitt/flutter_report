@@ -85,6 +85,7 @@ flutter:
     - assets/images/performance/lint_2T2000S.jpg
     - assets/images/performance/multithreading_2T2000S.jpg
     - assets/images/performance/results.jpg
+    - assets/images/performance/lint_1_spacex.png
 
     # Storage images
     - assets/images/storage/storage_1_2T2000S.png

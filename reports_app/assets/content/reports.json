@@ -168,10 +168,10 @@
                         "subtitle": "Results"
                     },
                     {
-                        "text": "Static profiling detected 94 problems spread across 17 files. "
+                        "text": "Static profiling found no issues related to code. Only one issue was found, a left over TODO. It’s, funnily, written in Spanish and was left by a Spanish contributor. "
                     },
                     {
-                        "image": "assets/images/home/2T2000s.png"
+                        "image": "assets/images/performance/lint_1_spacex.png"
                     }
                 ]
             },
@@ -182,10 +182,7 @@
                         "subtitle": "Threading in this app"
                     },
                     {
-                        "text": "This app has no actual multithreading, i.e., no isolates were used, and thus all the developed code runs in a single thread.\nOn the other hand, asynchronous calls are handled with simple placeholders, like using CircularProgressIndicators when there is no data available."
-                    },
-                    {
-                        "image": "assets/images/home/2T2000s.png"
+                        "text": "This app uses no multithreading; no isolate instances are started."
                     }
                 ]
             },
