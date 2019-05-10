@@ -11,7 +11,7 @@
     },
     "rendering": {
         "title": "Rendering and Animations",
-        "strategy": "For the UI we did guerilla testing to find out what was working well and what wasn’t for both UIs. The questions were: \n\n- Do you like this app?\n- Particularly, do you like the colors chosen for this app?\n- Was it hard to find your way through the interface?\n\nWe also took note on other comments and reactions by the user, and we asked which of the two apps they liked more.\nFor rendering, we found when the interface wasn’t responding as it should have and attempted to find out why.\nFor animations, we analyzed the most interesting ones for each app."
+        "strategy": "For the UI we did guerilla testing with 15 people to find out what was working well and what wasn’t for both UIs. The questions were: \n\n- Do you like this app?\n- Particularly, do you like the colors chosen for this app?\n- Was it hard to find your way through the interface?\n\nWe also took note on other comments and reactions by the user, and we asked which of the two apps they liked more.\nFor rendering, we found when the interface wasn’t responding as it should have and attempted to find out why.\nFor animations, we analyzed the most interesting ones for each app."
     },
     "connectivity": {
         "title": "Connectivity",        
