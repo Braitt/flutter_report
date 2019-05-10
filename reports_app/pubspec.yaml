@@ -105,6 +105,21 @@ flutter:
     - assets/images/rendering/fadetransition.png
     - assets/images/rendering/camera1.jpeg
 
+    # Code images
+
+    - assets/images/code/code_1_2T2000S.png
+    - assets/images/code/code_2_2T2000S.png
+    - assets/images/code/code_3_2T2000S.png
+    - assets/images/code/code_4_2T2000S.png
+    - assets/images/code/code_5_2T2000S.png
+    - assets/images/code/code_6_2T2000S.png
+    - assets/images/code/code_7_2T2000S.png
+    - assets/images/code/code_8_2T2000S.png
+    - assets/images/code/code_9_2T2000S.png
+    - assets/images/code/code_10_2T2000S.png
+    - assets/images/code/code_11_2T2000S.png
+    - assets/images/code/code_12_2T2000S.png
+
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 

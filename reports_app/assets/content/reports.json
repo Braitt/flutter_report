@@ -558,7 +558,165 @@
     },
     "code": {
         "title": "Code structure",
-        "content1": [],
+        "content1": [
+            {
+                "title": "Patterns",
+                "content": [
+                    {
+                        "text": "This app implements the BLoC pattern. BLoC stands for Business Logic Component and is a pattern created and recommended by Google for Flutter."
+                    },
+                    {
+                        "text": "This pattern is rather complicated to wrap your head around if it’s the first time you use Flutter. For us, it was easier to start with other options, like passing around Widget data from parent to child, and vice versa, before switching to using Scoped Models. There are several options to handling state, but BloC greatly reduces the complexity of listening to changes in the data."
+                    },
+                    {
+                        "text": "BloC makes great use of reactive programming and the observer pattern by using the RxDart library, and streams of data by using the StreamBuilder widget, as well as Object Models."
+                    },
+                    {
+                        "text": "The way this pattern is actually implemented isn’t clear, however. The pattern looks as follows."
+                    },
+                    {
+                        "image": "assets/images/code/code_1_2T2000S.png"
+                    },
+                    {
+                        "text": "The difference is that there is no repository in this project. It’s implemented as follows."
+                    },
+                    {
+                        "image": "assets/images/code/code_2_2T2000S.png"
+                    }
+                ]
+            },
+            {
+                "title": "Libraries",
+                "content": [
+                    {
+                        "subtitle": "The following table shows version used and current version of libraries used by 2T2000S"
+                    },
+                    {
+                        "image": "assets/images/code/code_3_2T2000S.png"
+                    }
+                ]
+            },
+            {
+                "title": "Platform Spicific Code",
+                "content": [
+                    {
+                        "text": "The app runs platform specific code on one situation only. On either the map view or the event view, when the user taps on the map, the link opened is different for each platform. iOS directs to maps.apple.com and Android directs to Google Maps."
+                    },
+                    {
+                        "image": "assets/images/code/code_4_2T2000S.png"
+                    }
+                ]
+            },
+            {
+                "title": "Native Code",
+                "content": [
+                    {
+                        "text": "The project makes two channels. Channels are the way that Flutter can communicate with native functions, that can be either already part of Android or iOS, or custom made. In this app, its the latter."
+                    },
+                    {
+                        "text": "This app implements a channel to save an image to the phone and a channel to add the image filters. The first case sounds like an excellent candidate for a plugin, right? Well, a plugin has just been published a few days ago. On the overlay front, however, there is no option to actually combine two pictures into one, which is the case of the filters offered."
+                    },
+                    {
+                        "subtitle": "This is what the filters look like"
+                    },
+                    {
+                        "image": "assets/images/code/code_5_2T2000S.png"
+                    }
+                ]
+            },
+            {
+                "title": "Native Android Code",
+                "content": [
+                    {
+                        "subtitle": "A default MainActivity.java file in a Flutter app looks like this"
+                    },
+                    {
+                        "image": "assets/images/code/code_6_2T2000S.png"
+                    },
+                    {
+                        "subtitle": "And this is what MainActivity.java on this app looks like"
+                    },
+                    {
+                        "image": "assets/images/code/code_7_2T2000S.png"
+                    },
+                    {
+                        "text": "The two channels end up calling onMethodCall, so it has to handle them"
+                    },
+                    {
+                        "image": "assets/images/code/code_8_2T2000S.png"
+                    },
+                    {
+                        "text": "On the ‘addOverlayToImage’ call, things like phone orientation need to be handled to apply the overlay correctly, and the final image is comprised of a canvas with two Bitmaps drawn onto it."
+                    },
+                    {
+                        "text": "On the ‘saveImage’ call, the image is never actually saved or written into a file, which is presumably why it doesn’t actually save the image."
+                    }
+                ]
+            },
+            {
+                "title": "Native iOS Code",
+                "content": [
+                    {
+                        "subtitle": "This was implemented in Objective-C on the AppDelegate.m file. A default AppDelegate.m file on Flutter looks like this"
+                    },
+                    {
+                        "image": "assets/images/code/code_9_2T2000S.png"
+                    },
+                    {
+                        "text": "On the app, a function was implemented in pretty much the same way it was in Java, but on Objective-C, with the exception that in iOS, the orientation isn’t handled directly as it is in Android, but comparing the height and width of the screen."
+                    },
+                    {
+                        "image": "assets/images/code/code_10_2T2000S.png"
+                    }
+                ]
+            },
+            {
+                "title": "Running Native Code",
+                "content": [
+                    {
+                        "text": "After the desired channels have been defined, running native code from Flutter is simple. First, a MethodChannel must be declared and initialized. Method channel is part of the Flutter/services package for Dart."
+                    },
+                    {
+                        "image": "assets/images/code/code_11_2T2000S.png"
+                    },
+                    {
+                        "text": "It is used with invokeMethod, and Flutter will decide whether to invoke Android’s channel on MainActivity.java or iOS’ channel on AppDelegate.m."
+                    },
+                    {
+                        "image": "assets/images/code/code_12_2T2000S.png"
+                    }
+                ]
+            },
+            {
+                "title": "Programming Practices",
+                "content": [
+                    {
+                        "subtitle": "Good programming practices"
+                    },
+                    {
+                        "text": "BLoC architectural pattern. It’s described as a good practice that focuses on the principle of detaching UI and State and Data Handling, and it is applied according, mostly, to the guidelines available."
+                    },
+                    {
+                        "text": "All images shown in the app are cached using the cached_network_image library."
+                    },
+                    {
+                        "subtitle": "Bad programming practices"
+                    },
+                    {
+                        "text": "A BLoC antipattern was encountered. Streams are opened but are never closed or otherwise disposed of. This is listed as an antipattern for BLoC, but it’s just generally a bad idea; it was also one of the points highlighted as a warning during the static code analysis, in the performance report."
+                    },
+                    {
+                        "text": "Maintainability is an issue in this project. This was done by a single person, and given the ‘one use only’ nature of the project, one could argue that maintainability is not so much of an issue, however, this project became a referent for how powerful Flutter can be to build beautiful and smooth interfaces and animations."
+                    },
+                    {
+                        "text": "Specifically, code could be heavily rearranged. The project comprises of a bloc folder containing two bloc models and one data provider, an (unused) models folder, an implementation of a library in the firebase_cache library (we couldn’t figure why it was implemented, it’s just the regular library files), 12 loose UI files and 1 utils file."
+                    },
+                    {
+                        "text": "Each of the UI files contains several (up to 25) classes. Granted, all of them belong to the same view, but a general good practice is to, when possible, limit a .dart file to one class, when it’s a StatelessWidget, or two, when it’s a StatefulWidget."
+                    }
+                ]
+            }
+        ],
         "content2": [],
         "color": "0xFF4B2142"
     }
