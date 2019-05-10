@@ -91,6 +91,16 @@ flutter:
     - assets/images/storage/storage_1_2T2000S.png
     - assets/images/storage/storage_2_2T2000S.png
     - assets/images/storage/storage_3_2T2000S.png
+    - assets/images/storage/storage_4_spacex.PNG
+    - assets/images/storage/storage_5_spacex.PNG
+    - assets/images/storage/storage_6_spacex.PNG
+    - assets/images/storage/storage_7_spacex.PNG
+    - assets/images/storage/storage_8_spacex.gif
+    - assets/images/storage/storage_9_spacex.PNG
+    - assets/images/storage/storage_10_spacex.PNG
+    - assets/images/storage/storage_11_spacex.jpeg
+    - assets/images/storage/storage_12_spacex.PNG
+    - assets/images/storage/storage_13_spacex.PNG
 
     # Rendering images
     - assets/images/rendering/ui1.jpeg
