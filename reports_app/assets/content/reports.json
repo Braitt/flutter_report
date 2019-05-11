@@ -739,16 +739,16 @@
                         "text": "This is handled in a very simple manner."
                     },
                     {
-                        "image": "assets/images/rendering/rendering_1_spacex.png"
+                        "image": "assets/images/rendering/rendering_1_spacex.PNG"
                     },
                     {
-                        "image": "assets/images/rendering/rendering_3_spacex.png"
+                        "image": "assets/images/rendering/rendering_3_spacex.PNG"
                     },
                     {
                         "text": "When building the home screen, the animation is declared and initialized in much the same manner as the home animation in the app 2T2000s. However, this app uses AnimatedWidget, which provides much of the actual animation elements. Besides creating the shown elements, there is not much more done to achieve this animation."
                     },
                     {
-                        "image": "assets/images/rendering/rendering_2_spacex.png"
+                        "image": "assets/images/rendering/rendering_2_spacex.PNG"
                     }
                 ]
             }
