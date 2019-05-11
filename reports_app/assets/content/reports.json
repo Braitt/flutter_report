@@ -677,7 +677,10 @@
                         "text": "Install the app, turn on airplane mode and open the app. Try to interact with it."
                     },
                     {
-                        "networkImage": "connectivity_1_2T2000S.gif"
+                        "networkImage": "connectivity_1_2T2000S-min.gif"
+                    },
+                    {
+                        "text": "2T2000S informs about no internet connection in schedule and main sections. However, map section is not providing information about it and let use its features normally."
                     }
                 ]
             },
@@ -688,7 +691,10 @@
                         "text": "Interact with the app, exit, turn on airplane mode and open the app. Try to interact with it."
                     },
                     {
-                        "networkImage": "connectivity_2_2T2000S.gif"
+                        "networkImage": "connectivity_2_2T2000S-min.gif"
+                    },
+                    {
+                        "text": "Application has similar behavior than Scenario 1, except for letting take photos and sending them in ‘time space’ section. These photos will never be sent and will no be able to view them on timeline."
                     }
                 ]
             },
@@ -699,7 +705,13 @@
                         "text": "Interact with the app, but before using each feature, turn on airplane mode."
                     },
                     {
-                        "networkImage": "connectivity_3_2T2000S.gif"
+                        "networkImage": "connectivity_31_2T2000S-min.gif"
+                    },
+                    {
+                        "networkImage": "connectivity_32_2T2000S-min.gif"
+                    },
+                    {
+                        "text": "The only feature we could interrupt while it was being processed is the photo adding feature in timeline. This feature allows to pick overlays but when we disabled internet connection, the photo did not upload correctly. "
                     }
                 ]
             },
@@ -710,7 +722,10 @@
                         "text": "Interact with the app, turning on airplane mode in the middle of executing each feature."
                     },
                     {
-                        "networkImage": "connectivity_4_2T2000S.gif"
+                        "networkImage": "connectivity_4_2T2000S-min.gif"
+                    },
+                    {
+                        "text": "Most of sections tried to retrieved images and content for saving them in cache. When we disabled connection, many of them could still be shown."
                     }
                 ]
             }
@@ -720,10 +735,10 @@
                 "title": "Connectivity Antipatterns",
                 "content": [
                     {
-                        "text": "The app loses content when it’s used without internet connection. The Lost Content issue is described as a situation when:\n\n- An app does not have connectivity\n-It shows empty, incomplete, or blurred content where it is supposed to be\n-The app does not report anything about a connectivity problem"
+                        "text": "App reports that does not exist any launches but it is because of non-connectivity status of application. SpaceX couldnot retrieve data from servers and that is no related to the message that app shows."
                     },
                     {
-                        "text": "User Content type. It is lost when a picture is taken without internet, it isn’t saved anywhere so it can be sent afterwards, when there is internet. Blank Map type also happens. Lastly, Blank Image type happens as well."
+                        "text": "The app loses content when it’s used without internet connection. The Lost Content issue is described as a situation when:\n\n- An app does not have connectivity\n-It shows empty, incomplete, or blurred content where it is supposed to be\n-The app does not report anything about a connectivity problem"
                     }
                 ]
             },
@@ -734,7 +749,7 @@
                         "text": "Install the app, turn on airplane mode and open the app. Try to interact with it."
                     },
                     {
-                        "networkImage": "connectivity_1_spacex.gif"
+                        "networkImage": "connectivity_1_spacex-min.gif"
                     }
                 ]
             },
@@ -745,7 +760,7 @@
                         "text": "Interact with the app, exit, turn on airplane mode and open the app. Try to interact with it."
                     },
                     {
-                        "networkImage": "connectivity_2_spacex.gif"
+                        "networkImage": "connectivity_2_spacex-min.gif"
                     }
                 ]
             },
@@ -756,7 +771,7 @@
                         "text": "Interact with the app, but before using each feature, turn on airplane mode."
                     },
                     {
-                        "networkImage": "connectivity_3_spacex.gif"
+                        "networkImage": "connectivity_3_spacex-min.gif"
                     }
                 ]
             },
@@ -767,7 +782,7 @@
                         "text": "Interact with the app, turning on airplane mode in the middle of executing each feature."
                     },
                     {
-                        "networkImage": "connectivity_4_spacex.gif"
+                        "networkImage": "connectivity_4_spacex-min.gif"
                     }
                 ]
             }
