@@ -135,13 +135,14 @@ flutter:
     - assets/images/code/code_10_2T2000S.png
     - assets/images/code/code_11_2T2000S.png
     - assets/images/code/code_12_2T2000S.png
-    - assets/images/code/code_1_spacex.png
-    - assets/images/code/code_2_spacex.png
-    - assets/images/code/code_3_spacex.png
-    - assets/images/code/code_4_spacex.png
-    - assets/images/code/code_5_spacex.png
-    - assets/images/code/code_6_spacex.png
-    - assets/images/code/code_7_spacex.png
+    - assets/images/code/code_1_spacex.PNG
+    - assets/images/code/code_2_spacex.PNG
+    - assets/images/code/code_3_spacex.PNG
+    - assets/images/code/code_4_spacex.PNG
+    - assets/images/code/code_5_spacex.PNG
+    - assets/images/code/code_6_spacex.PNG
+    - assets/images/code/code_7_spacex.PNG
+    - assets/images/code/spacecx-libraries.png
 
     # Connectivity images
 
