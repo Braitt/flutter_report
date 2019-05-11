@@ -658,8 +658,120 @@
     },
     "connectivity": {
         "title": "Connectivity",
-        "content1": [],
-        "content2": [],
+        "content1": [
+            {
+                "title": "Connectivity Antipatterns",
+                "content": [
+                    {
+                        "text": "The app loses content when it’s used without internet connection. The Lost Content issue is described as a situation when:\n\n- An app does not have connectivity\n-It shows empty, incomplete, or blurred content where it is supposed to be\n-The app does not report anything about a connectivity problem"
+                    },
+                    {
+                        "text": "User Content type. It is lost when a picture is taken without internet, it isn’t saved anywhere so it can be sent afterwards, when there is internet. Blank Map type also happens. Lastly, Blank Image type happens as well."
+                    }
+                ]
+            },
+            {
+                "title": "Scenario 1",
+                "content": [
+                    {
+                        "text": "Install the app, turn on airplane mode and open the app. Try to interact with it."
+                    },
+                    {
+                        "networkImage": "connectivity_1_2T2000S.gif"
+                    }
+                ]
+            },
+            {
+                "title": "Scenario 2",
+                "content": [
+                    {
+                        "text": "Interact with the app, exit, turn on airplane mode and open the app. Try to interact with it."
+                    },
+                    {
+                        "networkImage": "connectivity_2_2T2000S.gif"
+                    }
+                ]
+            },
+            {
+                "title": "Scenario 3",
+                "content": [
+                    {
+                        "text": "Interact with the app, but before using each feature, turn on airplane mode."
+                    },
+                    {
+                        "networkImage": "connectivity_3_2T2000S.gif"
+                    }
+                ]
+            },
+            {
+                "title": "Scenario 4",
+                "content": [
+                    {
+                        "text": "Interact with the app, turning on airplane mode in the middle of executing each feature."
+                    },
+                    {
+                        "networkImage": "connectivity_4_2T2000S.gif"
+                    }
+                ]
+            }
+        ],
+        "content2": [
+            {
+                "title": "Connectivity Antipatterns",
+                "content": [
+                    {
+                        "text": "The app loses content when it’s used without internet connection. The Lost Content issue is described as a situation when:\n\n- An app does not have connectivity\n-It shows empty, incomplete, or blurred content where it is supposed to be\n-The app does not report anything about a connectivity problem"
+                    },
+                    {
+                        "text": "User Content type. It is lost when a picture is taken without internet, it isn’t saved anywhere so it can be sent afterwards, when there is internet. Blank Map type also happens. Lastly, Blank Image type happens as well."
+                    }
+                ]
+            },
+            {
+                "title": "Scenario 1",
+                "content": [
+                    {
+                        "text": "Install the app, turn on airplane mode and open the app. Try to interact with it."
+                    },
+                    {
+                        "networkImage": "connectivity_1_spacex.gif"
+                    }
+                ]
+            },
+            {
+                "title": "Scenario 2",
+                "content": [
+                    {
+                        "text": "Interact with the app, exit, turn on airplane mode and open the app. Try to interact with it."
+                    },
+                    {
+                        "networkImage": "connectivity_2_spacex.gif"
+                    }
+                ]
+            },
+            {
+                "title": "Scenario 3",
+                "content": [
+                    {
+                        "text": "Interact with the app, but before using each feature, turn on airplane mode."
+                    },
+                    {
+                        "networkImage": "connectivity_3_spacex.gif"
+                    }
+                ]
+            },
+            {
+                "title": "Scenario 4",
+                "content": [
+                    {
+                        "text": "Interact with the app, turning on airplane mode in the middle of executing each feature."
+                    },
+                    {
+                        "networkImage": "connectivity_4_spacex.gif"
+                    }
+                ]
+            }
+        ],
         "color": "0xFFFFC145"
     },
     "code": {

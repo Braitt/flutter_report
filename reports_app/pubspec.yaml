@@ -131,6 +131,12 @@ flutter:
     - assets/images/code/code_11_2T2000S.png
     - assets/images/code/code_12_2T2000S.png
 
+    # Connectivity images
+
+    # Other images
+
+    - assets/images/other/loading.jpg
+
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 

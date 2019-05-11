@@ -6,10 +6,16 @@ class ContentCard extends StatelessWidget {
   final String image;
   final String circularImage;
   final String subtitle;
+  final String networkImage;
   final List<Map<String, String>> refs;
 
   ContentCard(
-      {this.text, this.image, this.circularImage, this.subtitle, this.refs});
+      {this.text,
+      this.image,
+      this.circularImage,
+      this.subtitle,
+      this.refs,
+      this.networkImage});
 
   factory ContentCard.fromJson(Map<String, dynamic> parsedJson) {
     List<Map<String, String>> builtRefs;
@@ -22,13 +28,13 @@ class ContentCard extends StatelessWidget {
         builtRefs.add({"name": currentRef[0], "link": currentRef[1]});
       });
     }
-    print(builtRefs);
     return ContentCard(
       text: parsedJson['text'],
       image: parsedJson['image'],
       circularImage: parsedJson['circularImage'],
       subtitle: parsedJson['subtitle'],
       refs: builtRefs,
+      networkImage: parsedJson['networkImage'],
     );
   }
 
@@ -44,6 +50,26 @@ class ContentCard extends StatelessWidget {
           image,
           fit: BoxFit.fill,
         ),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(deviceHeight * 0.02),
+        ),
+        elevation: 5,
+        margin: EdgeInsets.all(deviceHeight * 0.01),
+      );
+    } else if (networkImage != null && text == null && circularImage == null) {
+      return Card(
+        semanticContainer: true,
+        clipBehavior: Clip.antiAliasWithSaveLayer,
+        child: FadeInImage(
+            image: Image.network(
+              "https://s3.amazonaws.com/supervoicesbucket.team04/images/" +
+                  networkImage,
+              fit: BoxFit.fill,
+            ).image,
+            placeholder: Image.asset(
+              "assets/images/other/loading.jpg",
+              fit: BoxFit.fill,
+            ).image),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(deviceHeight * 0.02),
         ),
