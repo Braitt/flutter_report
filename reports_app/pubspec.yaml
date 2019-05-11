@@ -119,6 +119,11 @@ flutter:
     - assets/images/rendering/rendering_2_spacex.PNG
     - assets/images/rendering/rendering_3_spacex.PNG
     - assets/images/rendering/rendering_4_spacex.gif
+    - assets/images/rendering/rendering_1_2T2000S.jpeg
+    - assets/images/rendering/rendering_2_2T2000S.jpeg
+    - assets/images/rendering/rendering_3_2T2000S.jpeg
+    - assets/images/rendering/rendering_4_2T2000S.jpeg
+    - assets/images/rendering/rendering_5_2T2000S.jpeg
 
 
     # Code images

@@ -547,13 +547,13 @@
                 "title": "Accessibility",
                 "content": [
                     {
-                        "text": "We ran Google’s Accessibility Scanner and found the following suggestions."
-                    },
-                    {
                         "subtitle": "We ran Google’s Accessibility Scanner and found the following suggestions."
                     },
                     {
                         "text": "Accessibility Scanner suggests an item label for all clickable items. In 2T2000s, several Widgets have no label, like the social media buttons in the Info tab."
+                    },
+                    {
+                        "image": "assets/images/rendering/rendering_1_2T2000S.jpeg"
                     },
                     {
                         "subtitle": "Color contrast"
@@ -562,10 +562,22 @@
                         "text": "Color contrast was an issue in two screens."
                     },
                     {
+                        "image": "assets/images/rendering/rendering_2_2T2000S.jpeg"
+                    },
+                    {
+                        "image": "assets/images/rendering/rendering_3_2T2000S.jpeg"
+                    },
+                    {
+                        "image": "assets/images/rendering/rendering_4_2T2000S.jpeg"
+                    },
+                    {
                         "subtitle": "Button size"
                     },
                     {
                         "text": "Button size was a warning on two screens."
+                    },
+                    {
+                        "image": "assets/images/rendering/rendering_5_2T2000S.jpeg"
                     }
                 ]
             },
@@ -670,22 +682,22 @@
                         "subtitle": "Particularly, do you like the colors chosen for this app?"
                     },
                     {
-                        "text":"Of the 15 people, 4 complained about the colors, saying it was too dark. This could be noise in the experiment since all of these 4 people that complained about it being too dark were interviewed during the day— a sunny day at that."
+                        "text": "Of the 15 people, 4 complained about the colors, saying it was too dark. This could be noise in the experiment since all of these 4 people that complained about it being too dark were interviewed during the day— a sunny day at that."
                     },
                     {
-                        "text":"After being directed to the settings where they could choose their favourite theme, all users seemed to find a theme they were comfortable with, though most (10) people didn’t change it. Again, this could be due to having interviewed most people at night."
+                        "text": "After being directed to the settings where they could choose their favourite theme, all users seemed to find a theme they were comfortable with, though most (10) people didn’t change it. Again, this could be due to having interviewed most people at night."
                     },
                     {
                         "subtitle": "Was it hard to find your way through the interface?"
                     },
                     {
-                        "text":"People found their way through the app without any issue; the interface is very intuitive; tabs are easily understood, as are the buttons in the list view. They are all part of material’s metaphor."
+                        "text": "People found their way through the app without any issue; the interface is very intuitive; tabs are easily understood, as are the buttons in the list view. They are all part of material’s metaphor."
                     },
                     {
                         "subtitle": "Further comments"
                     },
                     {
-                        "text":"Two people noticed the subtle animations in the app and commented that they were fluid, simple and well done. One of them commented that they helped give the opening menu cohesion."
+                        "text": "Two people noticed the subtle animations in the app and commented that they were fluid, simple and well done. One of them commented that they helped give the opening menu cohesion."
                     }
                 ]
             },
@@ -733,7 +745,7 @@
                         "image": "assets/images/rendering/rendering_3_spacex.png"
                     },
                     {
-                        "text":"When building the home screen, the animation is declared and initialized in much the same manner as the home animation in the app 2T2000s. However, this app uses AnimatedWidget, which provides much of the actual animation elements. Besides creating the shown elements, there is not much more done to achieve this animation."
+                        "text": "When building the home screen, the animation is declared and initialized in much the same manner as the home animation in the app 2T2000s. However, this app uses AnimatedWidget, which provides much of the actual animation elements. Besides creating the shown elements, there is not much more done to achieve this animation."
                     },
                     {
                         "image": "assets/images/rendering/rendering_2_spacex.png"
