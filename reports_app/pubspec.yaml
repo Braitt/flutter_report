@@ -115,6 +115,11 @@ flutter:
     - assets/images/rendering/apppage.png
     - assets/images/rendering/fadetransition.png
     - assets/images/rendering/camera1.jpeg
+    - assets/images/rendering/rendering_1_spacex.PNG
+    - assets/images/rendering/rendering_2_spacex.PNG
+    - assets/images/rendering/rendering_3_spacex.PNG
+    - assets/images/rendering/rendering_4_spacex.gif
+
 
     # Code images
 
