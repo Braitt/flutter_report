@@ -124,7 +124,8 @@ flutter:
     - assets/images/rendering/rendering_3_2T2000S.jpeg
     - assets/images/rendering/rendering_4_2T2000S.jpeg
     - assets/images/rendering/rendering_5_2T2000S.jpeg
-
+    - assets/images/rendering/accessibility_1_spacex.jpeg
+    - assets/images/rendering/accessibility_2_spacex.jpeg
 
     # Code images
 
