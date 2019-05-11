@@ -950,7 +950,125 @@
                 ]
             }
         ],
-        "content2": [],
+        "content2": [
+            {
+                "title": "Patterns",
+                "content": [
+                    {
+                        "text": "This app implements Scoped Model. It’s one of the ways to architect a Flutter application. Currently there are 3 major/popular ways to architect the way data is passed around the widgets.",
+                        "refs": "Flutter architecture::https://medium.com/flutter-community/flutter-app-architecture-101-vanilla-scoped-model-bloc-7eff7b2baf7e"
+                    },
+                    {
+                        "text": "This library has been described as a “set of utilities that allow you to easily pass a data Model from a parent Widget down to its descendants. In addition, it also rebuilds all of the children that use the model when the model is updated. This library was originally extracted from the Fuchsia codebase.”",
+                        "refs": "Fuchsia and Flutter::https://medium.com/jay-tillu/fuchsia-os-the-game-changer-in-os-world-bf8f1f6d25e8"
+                    },
+                    {
+                        "text": "So ScopedModel is a way to centralize data and state management, instead of the default ‘setState’ call, that works much like React in that it handles a StatefulWidget’s state and repaints the widget. With a ScopedModel you can have files with the data handling you need, and call them with the ScopedModelDescendant widget."
+                    },
+                    {
+                        "text": "The ScopedModelDescendant widget works as an observer, and the given model—the observable— can notify them and cause them to repaint."
+                    },
+                    {
+                        "subtitle": "This is a ScopedModelDescendant that listens to changes in the AppModel."
+                    },
+                    {
+                        "image": "assets/images/code/code_1_spacex.PNG"
+                    },
+                    {
+                        "text": "A ScopedModelDescendant includes must be initialized with a builder parameter. It takes a function that returns the actual widget that will be displayed. In the image above we can also see a ScopedModel widget."
+                    },
+                    {
+                        "text": "This widget must wrap the entire widget tree that uses this model, in this case the MaterialApp, and it takes a model parameter with the only instance of the model in the whole app. The model parameter is only initialized once for the entire application."
+                    },
+                    {
+                        "image": "assets/images/code/code_2_spacex.PNG"
+                    },
+                    {
+                        "text": "The AppModel must extend Model, from the ScopedModel library."
+                    },
+                    {
+                        "image": "assets/images/code/code_3_spacex.PNG"
+                    },
+                    {
+                        "text": "And the way the model notifies its listeners when a change has been done in the data is with the following line."
+                    },
+                    {
+                        "image": "assets/images/code/code_4_spacex.PNG"
+                    },
+                    {
+                        "text": "This app defines different models, each updates and notifies a different piece of code. It’s actually very well organized. Here’s a model that shows the structure that the developers built."
+                    },
+                    {
+                        "image": "assets/images/code/code_5_spacex.png"
+                    }
+                ]
+            },
+            {
+                "title": "Libraries",
+                "content": [
+                    {
+                        "subtitle": "Libraries declared"
+                    },
+                    {
+                        "image": "assets/images/code/spacex-libraries.png"
+                    }
+                ]
+            },
+            {
+                "title": "Platform Specific Code",
+                "content": [
+                    {
+                        "text": "In this app, platform specific code is not explicitly declared. However, a library used, Flutter Web Browser, has a specific parameter for Android for the toolbar color. Each time the browser is called, this parameter is set to the theme’s primary color."
+                    },
+                    {
+                        "image": "assets/images/code/code_6_spacex.PNG"
+                    },
+                    {
+                        "text": "Another library also runs platform specifics, Flutter Local Notifications, takes in two different parameters, one for Android and one for iOS. These parameters are also part of the same library."
+                    },
+                    {
+                        "image": "assets/images/code/code_7_spacex.PNG"
+                    },
+                    {
+                        "text": "Despite this, there is not much real platform specific development done."
+                    }
+                ]
+            },
+            {
+                "title": "Nativo code",
+                "content": [
+                    {
+                        "text": "There is no native code developed, and no channels declared or used."
+                    }
+                ]
+            },
+            {
+                "title": "Programming Practices",
+                "content": [
+                    {
+                        "subtitle": "Good practices"
+                    },
+                    {
+                        "text": "Architecture in this project is very simple and easy to understand. As shown earlier, each widget that needs its state handled, has an associated model. Models that have common methods extend a ‘base’ model, QueryModel, with methods like setLoading, which updates the loading spinners everywhere in the app."
+                    },
+                    {
+                        "text": "Something to highlight is that the widgets are set to listen only to the relevant model for changes. For our project, all widgets were set to listen to a single model."
+                    },
+                    {
+                        "text": "Also, apart from this, data objects are defined for concepts like vehicles, missions and rockets. This was outside the scope of the diagram shown earlier though."
+                    },
+                    {
+                        "subtitle": "Bad practices"
+                    },
+                    {
+                        "text": "We actually found this project to be very thought through, organized, clean and we didn’t see bad programming practices."
+                    },
+                    {
+                        "text": "Also, we could suggest not to mix ScopedModels with the actual data models. Having two folders would be a good idea."
+                    }
+                ]
+            }
+        ],
         "color": "0xFF4B2142"
     }
 }
