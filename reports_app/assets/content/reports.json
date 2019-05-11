@@ -677,7 +677,7 @@
                         "text": "Install the app, turn on airplane mode and open the app. Try to interact with it."
                     },
                     {
-                        "networkImage": "connectivity_1_2T2000S.gif"
+                        "networkImage": "connectivity_1_2T2000S-min.gif"
                     }
                 ]
             },
@@ -688,7 +688,7 @@
                         "text": "Interact with the app, exit, turn on airplane mode and open the app. Try to interact with it."
                     },
                     {
-                        "networkImage": "connectivity_2_2T2000S.gif"
+                        "networkImage": "connectivity_2_2T2000S-min.gif"
                     }
                 ]
             },
@@ -699,7 +699,11 @@
                         "text": "Interact with the app, but before using each feature, turn on airplane mode."
                     },
                     {
-                        "networkImage": "connectivity_3_2T2000S.gif"
+                        "networkImage": "connectivity_31_2T2000S-min.gif"
+                    }
+                    ,
+                    {
+                        "networkImage": "connectivity_32_2T2000S-min.gif"
                     }
                 ]
             },
@@ -710,7 +714,7 @@
                         "text": "Interact with the app, turning on airplane mode in the middle of executing each feature."
                     },
                     {
-                        "networkImage": "connectivity_4_2T2000S.gif"
+                        "networkImage": "connectivity_4_2T2000S-min.gif"
                     }
                 ]
             }
@@ -734,7 +738,7 @@
                         "text": "Install the app, turn on airplane mode and open the app. Try to interact with it."
                     },
                     {
-                        "networkImage": "connectivity_1_spacex.gif"
+                        "networkImage": "connectivity_1_spacex-min.gif"
                     }
                 ]
             },
@@ -745,7 +749,7 @@
                         "text": "Interact with the app, exit, turn on airplane mode and open the app. Try to interact with it."
                     },
                     {
-                        "networkImage": "connectivity_2_spacex.gif"
+                        "networkImage": "connectivity_2_spacex-min.gif"
                     }
                 ]
             },
@@ -756,7 +760,7 @@
                         "text": "Interact with the app, but before using each feature, turn on airplane mode."
                     },
                     {
-                        "networkImage": "connectivity_3_spacex.gif"
+                        "networkImage": "connectivity_3_spacex-min.gif"
                     }
                 ]
             },
@@ -767,7 +771,7 @@
                         "text": "Interact with the app, turning on airplane mode in the middle of executing each feature."
                     },
                     {
-                        "networkImage": "connectivity_4_spacex.gif"
+                        "networkImage": "connectivity_4_spacex-min.gif"
                     }
                 ]
             }
