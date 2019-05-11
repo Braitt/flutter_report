@@ -736,7 +736,7 @@
                         "text": "The app loses content when it’s used without internet connection. The Lost Content issue is described as a situation when:\n\n- An app does not have connectivity\n-It shows empty, incomplete, or blurred content where it is supposed to be\n-The app does not report anything about a connectivity problem"
                     },
                     {
-                        "text": "User Content type. It is lost when a picture is taken without internet, it isn’t saved anywhere so it can be sent afterwards, when there is internet. Blank Map type also happens. Lastly, Blank Image type happens as well."
+                        "text": "User Content type. It is lost when a picture is taken without internet, it isn’t saved anywhere so it can be sent afterwards, when there is internet. Blank Map type also happens. Lastly, Blank Image type happens as well. However, 2T2000S app uses firebase and it helps to keep eventual connectivity working correctly."
                     }
                 ]
             },
@@ -808,7 +808,7 @@
                         "text": "App reports that does not exist any launches but it is because of non-connectivity status of application. SpaceX couldnot retrieve data from servers and that is no related to the message that app shows."
                     },
                     {
-                        "text": "The app loses content when it’s used without internet connection. The Lost Content issue is described as a situation when:\n\n- An app does not have connectivity\n-It shows empty, incomplete, or blurred content where it is supposed to be\n-The app does not report anything about a connectivity problem"
+                        "text": "SpaceX uses Fire Storage and it helps to keep eventual connectivity and show correctly images retrieved from buckets on firebase (almost of all the pictures in the app). The app loses content when it’s used without internet connection. The Lost Content issue is described as a situation when:\n\n- An app does not have connectivity\n-It shows empty, incomplete, or blurred content where it is supposed to be\n-The app does not report anything about a connectivity problem"
                     }
                 ]
             },
