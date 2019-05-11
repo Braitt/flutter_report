@@ -1010,7 +1010,7 @@
                         "subtitle": "Libraries declared"
                     },
                     {
-                        "image": "assets/images/code/spacex-libraries.png"
+                        "image": "assets/images/code/spacecx-libraries.png"
                     }
                 ]
             },
@@ -1035,7 +1035,7 @@
                 ]
             },
             {
-                "title": "Nativo code",
+                "title": "Native code",
                 "content": [
                     {
                         "text": "There is no native code developed, and no channels declared or used."
