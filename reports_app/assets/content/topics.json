@@ -15,7 +15,7 @@
     },
     "connectivity": {
         "title": "Connectivity",        
-        "strategy": "In order to test this, we came up with scenarios, in order to reproduce them for all apps. Airplane mode was used to interrupt internet connection.\n\n1. Install the app, turn on airplane mode and open the app. Try to interact with it.\n2. Interact with the app, exit, turn on airplane mode and open the app. Try to interact with it.\n3. Interact with the app, but before using each feature, turn on airplane mode.\n4. Interact with the app, turning on airplane mode in the middle of executing each feature.\n\nWe will also cover the feedback that the user receives when there is no internet connection. Is it blocking? Is the error message unexpressive? Let’s find out!"        
+        "strategy": "In order to test this, we came up with scenarios, in order to reproduce them for all apps. Airplane mode was used to interrupt internet connection.\n\n1. Install the app, turn on airplane mode and open the app. Try to interact with it.\n2. Interact with the app, exit, turn on airplane mode and open the app. Try to interact with it.\n3. Interact with the app, but before using each feature, turn on airplane mode.\n4. Interact with the app, turning on airplane mode in the middle of executing each feature.\n\nWe will also cover the feedback that the user receives when there is no internet connection. Is it blocking? Is the error message unexpressive? Let’s find out!\n\nIt is important to inform that media content of this section is uploaded on cloud and you will need internet connection to view it."        
     },
     "code": {
         "title": "Code structure",
