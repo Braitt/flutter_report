@@ -601,7 +601,7 @@
                         "image": "assets/images/rendering/animation1.gif"
                     },
                     {
-                        "text": "On the ‘Code’ report, the BLoC pattern used is described in more detail 1 2. However, one of the two blocs used is only to manage scroll information. The bloc is used to define a feed of the scroll state in the form of a few controllers, sinks (data flows to the bloc) and streams (data flows to the widget)."
+                        "text": "On the ‘Code’ report, the BLoC pattern used is described in more detail. However, one of the two blocs used is only to manage scroll information. The bloc is used to define a feed of the scroll state in the form of a few controllers, sinks (data flows to the bloc) and streams (data flows to the widget)."
                     },
                     {
                         "image": "assets/images/rendering/scrollbloc.png"
@@ -653,7 +653,94 @@
                 ]
             }
         ],
-        "content2": [],
+        "content2": [
+            {
+                "title": "UI",
+                "content": [
+                    {
+                        "text": "The following statement were result of guerrilla testing."
+                    },
+                    {
+                        "subtitle": "Do you like the look and feel of this app?"
+                    },
+                    {
+                        "text": "This app was well received by the 15 people interviewed. The clean interface design stood out among the interviewed people."
+                    },
+                    {
+                        "subtitle": "Particularly, do you like the colors chosen for this app?"
+                    },
+                    {
+                        "text":"Of the 15 people, 4 complained about the colors, saying it was too dark. This could be noise in the experiment since all of these 4 people that complained about it being too dark were interviewed during the day— a sunny day at that."
+                    },
+                    {
+                        "text":"After being directed to the settings where they could choose their favourite theme, all users seemed to find a theme they were comfortable with, though most (10) people didn’t change it. Again, this could be due to having interviewed most people at night."
+                    },
+                    {
+                        "subtitle": "Was it hard to find your way through the interface?"
+                    },
+                    {
+                        "text":"People found their way through the app without any issue; the interface is very intuitive; tabs are easily understood, as are the buttons in the list view. They are all part of material’s metaphor."
+                    },
+                    {
+                        "subtitle": "Further comments"
+                    },
+                    {
+                        "text":"Two people noticed the subtle animations in the app and commented that they were fluid, simple and well done. One of them commented that they helped give the opening menu cohesion."
+                    }
+                ]
+            },
+            {
+                "title": "Accessibility",
+                "content": [
+                    {
+                        "text": "We didn’t find many suggestions for SpaceX. Only on two matters. Some labels don’t have readable labels. This isn’t so much of a problem since it points to an ‘decoration’ image, but it can have a description for screen readers."
+                    },
+                    {
+                        "image": "assets/images/rendering/accessibility_1_spacex.jpeg"
+                    },
+                    {
+                        "text": "Another suggestion was to make a clickable element bigger. Again, this isn’t much of an issue since this item is readily focused and the keyboard opened, so there is no real need to click it at all."
+                    },
+                    {
+                        "image": "assets/images/rendering/accessibility_2_spacex.jpeg"
+                    }
+                ]
+            },
+            {
+                "title": "Rendering",
+                "content": [
+                    {
+                        "text": "Running a GPU profiling was possible, and no issues were found. It always renders in less than the recommended 16ms per frame in average. Also, no situation was found where a frame took more than 16ms to both render and display on screen. In the below image, a snapshot of the dynamic GPU and UI profiler is displayed."
+                    }
+                ]
+            },
+            {
+                "title": "Animations",
+                "content": [
+                    {
+                        "text": "There is only one animation in the home screen."
+                    },
+                    {
+                        "image": "assets/images/rendering/rendering_4_spacex.gif"
+                    },
+                    {
+                        "text": "This is handled in a very simple manner."
+                    },
+                    {
+                        "image": "assets/images/rendering/rendering_1_spacex.png"
+                    },
+                    {
+                        "image": "assets/images/rendering/rendering_3_spacex.png"
+                    },
+                    {
+                        "text":"When building the home screen, the animation is declared and initialized in much the same manner as the home animation in the app 2T2000s. However, this app uses AnimatedWidget, which provides much of the actual animation elements. Besides creating the shown elements, there is not much more done to achieve this animation."
+                    },
+                    {
+                        "image": "assets/images/rendering/rendering_2_spacex.png"
+                    }
+                ]
+            }
+        ],
         "color": "0xFFDA2C38"
     },
     "connectivity": {
@@ -666,7 +753,7 @@
                         "text": "The app loses content when it’s used without internet connection. The Lost Content issue is described as a situation when:\n\n- An app does not have connectivity\n-It shows empty, incomplete, or blurred content where it is supposed to be\n-The app does not report anything about a connectivity problem"
                     },
                     {
-                        "text": "User Content type. It is lost when a picture is taken without internet, it isn’t saved anywhere so it can be sent afterwards, when there is internet. Blank Map type also happens. Lastly, Blank Image type happens as well."
+                        "text": "User Content type. It is lost when a picture is taken without internet, it isn’t saved anywhere so it can be sent afterwards, when there is internet. Blank Map type also happens. Lastly, Blank Image type happens as well. However, 2T2000S app uses firebase and it helps to keep eventual connectivity working correctly."
                     }
                 ]
             },
@@ -738,7 +825,7 @@
                         "text": "App reports that does not exist any launches but it is because of non-connectivity status of application. SpaceX couldnot retrieve data from servers and that is no related to the message that app shows."
                     },
                     {
-                        "text": "The app loses content when it’s used without internet connection. The Lost Content issue is described as a situation when:\n\n- An app does not have connectivity\n-It shows empty, incomplete, or blurred content where it is supposed to be\n-The app does not report anything about a connectivity problem"
+                        "text": "SpaceX uses Fire Storage and it helps to keep eventual connectivity and show correctly images retrieved from buckets on firebase (almost of all the pictures in the app). The app loses content when it’s used without internet connection. The Lost Content issue is described as a situation when:\n\n- An app does not have connectivity\n-It shows empty, incomplete, or blurred content where it is supposed to be\n-The app does not report anything about a connectivity problem"
                     }
                 ]
             },
