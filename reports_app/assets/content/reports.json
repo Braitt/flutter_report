@@ -375,7 +375,116 @@
                 ]
             }
         ],
-        "content2": [],
+        "content2": [
+            {
+                "title": "Shared Preferences",
+                "content": [
+                    {
+                        "text": "This app makes use of SharedPreferences in various instances, in four different files."
+                    },
+                    {
+                        "subtitle": "app_model.dart"
+                    },
+                    {
+                        "text": "In this file, a SharedPreferences instance is used in the init function to set or get a theme. If there is a theme, it loads it into the theme variable, and if there isn’t, it sets it anew to a default value of 1."
+                    },
+                    {
+                        "image": "assets/images/storage/storage_4_spacex.PNG"
+                    },
+                    {
+                        "subtitle": "spacex_home.dart"
+                    },
+                    {
+                        "image": "assets/images/storage/storage_5_spacex.PNG"
+                    },
+                    {
+                        "image": "assets/images/storage/storage_6_spacex.PNG"
+                    },
+                    {
+                        "text": "This is used to set the notifications for the app. The date saved in the phone is validated to the next launchdate. This will update the scheduled notifications accordingly. See more on notifications on the ‘code’ report."
+                    },
+                    {
+                        "subtitle": "settings.dart"
+                    },
+                    {
+                        "text": "This sets the theme setting to another value depending on the current theme. This can be changed on the home tab."
+                    },
+                    {
+                        "image": "assets/images/storage/storage_8_spacex.PNG"
+                    },
+                    {
+                        "image": "assets/images/storage/storage_7_spacex.PNG"
+                    },
+                    {
+                        "subtitle": "start.dart"
+                    },
+                    {
+                        "text": "This use of SharedPreferences helps the developers know if the given user has donated to their Patreon. It will keep reappearing every 14 days if not."
+                    },
+                    {
+                        "image": "assets/images/storage/storage_9_spacex.PNG"
+                    }
+                ]
+            },
+            {
+                "title": "Storage management",
+                "content": [
+                    {
+                        "subtitle": "Local - Private"
+                    },
+                    {
+                        "text": "This refers to storing data in SQLite. This app does not use this storage strategy per se, but the cached_network_image library uses it to create the cache and keep the images in the app.",
+                        "refs": "Cached_network_image::https://pub.dev/documentation/cached_network_image/latest/"
+                    },
+                    {
+                        "subtitle": "External - Public"
+                    },
+                    {
+                        "text": "This refers to storing data inside the phone in a public folder, like the sd_card for instance. This app does not use this storage strategy."
+                    }
+                ]
+            },
+            {
+                "title": "Remote Storage",
+                "content": [
+                    {
+                        "text": "Data is not saved remotely. However, data is fetched from two online services. The first one is used for the photos that can be found in the app."
+                    },
+                    {
+                        "image": "assets/images/storage/storage_11_spacex.jpeg"
+                    },
+                    {
+                        "image": "assets/images/storage/storage_10_spacex.PNG"
+                    },
+                    {
+                        "text": "Aside from this, data about the launches and other information is fetched from the spacex API: https://api.spacexdata.com/v3/launches/upcoming. Information obtained from this API includes the upcoming launch dates, which vessel is set to be used and other relevant information. This is retrieved as a Json. The following is an excerpt:"
+                    },
+                    {
+                        "image": "assets/images/storage/storage_12_spacex.PNG"
+                    }
+                ]
+            },
+            {
+                "title": "Cache & Data Fetching",
+                "content": [
+                    {
+                        "text": "Cache is used to keep images in the app. Already loaded pictures are kept in the app for the user to see when they open the app. This avoids the need to fetch multimedia files from the server, and it’s a permanent cache."
+                    },
+                    {
+                        "text": "A library is declared, cached_network_image. This is used in the CachedImage widget."
+                    },
+                    {
+                        "image": "assets/images/storage/storage_13_spacex.PNG"
+                    },
+                    {
+                        "image": "assets/images/storage/storage_10_spacex.PNG"
+                    },
+                    {
+                        "text": "This widget wraps the CachedNetworkImage widget that is provided by the library. This is a practice found in Flutter and React, where code that is commonly used with the same parameters is factorized. In this case, CachedNetworkImages always receive a different url, the same error function, and the same fade in duration. This CacheImage widget only has one parameter, the url, so it simplifies the code."
+                    }
+                ]
+            }
+        ],
         "color": "0xFF1B4079"
     },
     "rendering": {
@@ -549,8 +658,120 @@
     },
     "connectivity": {
         "title": "Connectivity",
-        "content1": [],
-        "content2": [],
+        "content1": [
+            {
+                "title": "Connectivity Antipatterns",
+                "content": [
+                    {
+                        "text": "The app loses content when it’s used without internet connection. The Lost Content issue is described as a situation when:\n\n- An app does not have connectivity\n-It shows empty, incomplete, or blurred content where it is supposed to be\n-The app does not report anything about a connectivity problem"
+                    },
+                    {
+                        "text": "User Content type. It is lost when a picture is taken without internet, it isn’t saved anywhere so it can be sent afterwards, when there is internet. Blank Map type also happens. Lastly, Blank Image type happens as well."
+                    }
+                ]
+            },
+            {
+                "title": "Scenario 1",
+                "content": [
+                    {
+                        "text": "Install the app, turn on airplane mode and open the app. Try to interact with it."
+                    },
+                    {
+                        "networkImage": "connectivity_1_2T2000S.gif"
+                    }
+                ]
+            },
+            {
+                "title": "Scenario 2",
+                "content": [
+                    {
+                        "text": "Interact with the app, exit, turn on airplane mode and open the app. Try to interact with it."
+                    },
+                    {
+                        "networkImage": "connectivity_2_2T2000S.gif"
+                    }
+                ]
+            },
+            {
+                "title": "Scenario 3",
+                "content": [
+                    {
+                        "text": "Interact with the app, but before using each feature, turn on airplane mode."
+                    },
+                    {
+                        "networkImage": "connectivity_3_2T2000S.gif"
+                    }
+                ]
+            },
+            {
+                "title": "Scenario 4",
+                "content": [
+                    {
+                        "text": "Interact with the app, turning on airplane mode in the middle of executing each feature."
+                    },
+                    {
+                        "networkImage": "connectivity_4_2T2000S.gif"
+                    }
+                ]
+            }
+        ],
+        "content2": [
+            {
+                "title": "Connectivity Antipatterns",
+                "content": [
+                    {
+                        "text": "The app loses content when it’s used without internet connection. The Lost Content issue is described as a situation when:\n\n- An app does not have connectivity\n-It shows empty, incomplete, or blurred content where it is supposed to be\n-The app does not report anything about a connectivity problem"
+                    },
+                    {
+                        "text": "User Content type. It is lost when a picture is taken without internet, it isn’t saved anywhere so it can be sent afterwards, when there is internet. Blank Map type also happens. Lastly, Blank Image type happens as well."
+                    }
+                ]
+            },
+            {
+                "title": "Scenario 1",
+                "content": [
+                    {
+                        "text": "Install the app, turn on airplane mode and open the app. Try to interact with it."
+                    },
+                    {
+                        "networkImage": "connectivity_1_spacex.gif"
+                    }
+                ]
+            },
+            {
+                "title": "Scenario 2",
+                "content": [
+                    {
+                        "text": "Interact with the app, exit, turn on airplane mode and open the app. Try to interact with it."
+                    },
+                    {
+                        "networkImage": "connectivity_2_spacex.gif"
+                    }
+                ]
+            },
+            {
+                "title": "Scenario 3",
+                "content": [
+                    {
+                        "text": "Interact with the app, but before using each feature, turn on airplane mode."
+                    },
+                    {
+                        "networkImage": "connectivity_3_spacex.gif"
+                    }
+                ]
+            },
+            {
+                "title": "Scenario 4",
+                "content": [
+                    {
+                        "text": "Interact with the app, turning on airplane mode in the middle of executing each feature."
+                    },
+                    {
+                        "networkImage": "connectivity_4_spacex.gif"
+                    }
+                ]
+            }
+        ],
         "color": "0xFFFFC145"
     },
     "code": {

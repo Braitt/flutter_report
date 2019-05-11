@@ -91,6 +91,16 @@ flutter:
     - assets/images/storage/storage_1_2T2000S.png
     - assets/images/storage/storage_2_2T2000S.png
     - assets/images/storage/storage_3_2T2000S.png
+    - assets/images/storage/storage_4_spacex.PNG
+    - assets/images/storage/storage_5_spacex.PNG
+    - assets/images/storage/storage_6_spacex.PNG
+    - assets/images/storage/storage_7_spacex.PNG
+    - assets/images/storage/storage_8_spacex.gif
+    - assets/images/storage/storage_9_spacex.PNG
+    - assets/images/storage/storage_10_spacex.PNG
+    - assets/images/storage/storage_11_spacex.jpeg
+    - assets/images/storage/storage_12_spacex.PNG
+    - assets/images/storage/storage_13_spacex.PNG
 
     # Rendering images
     - assets/images/rendering/ui1.jpeg
@@ -120,6 +130,12 @@ flutter:
     - assets/images/code/code_10_2T2000S.png
     - assets/images/code/code_11_2T2000S.png
     - assets/images/code/code_12_2T2000S.png
+
+    # Connectivity images
+
+    # Other images
+
+    - assets/images/other/loading.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
