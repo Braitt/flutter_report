@@ -690,6 +690,23 @@
                 ]
             },
             {
+                "title": "Accessibility",
+                "content": [
+                    {
+                        "text": "We didn’t find many suggestions for SpaceX. Only on two matters. Some labels don’t have readable labels. This isn’t so much of a problem since it points to an ‘decoration’ image, but it can have a description for screen readers."
+                    },
+                    {
+                        "image": "assets/images/rendering/accessibility_1_spacex.jpeg"
+                    },
+                    {
+                        "text": "Another suggestion was to make a clickable element bigger. Again, this isn’t much of an issue since this item is readily focused and the keyboard opened, so there is no real need to click it at all."
+                    },
+                    {
+                        "image": "assets/images/rendering/accessibility_2_spacex.jpeg"
+                    }
+                ]
+            },
+            {
                 "title": "Rendering",
                 "content": [
                     {
